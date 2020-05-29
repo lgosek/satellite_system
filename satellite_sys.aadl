@@ -1,0 +1,73 @@
+package satellite_sys
+public
+	
+	system satellite_system
+	end satellite_system;
+	
+	system implementation satellite_system.impl
+		subcomponents
+			alt_sensor: device altitude_sensor;
+			correction_engine_1: device correction_engine;
+			correction_engine_2: device correction_engine;
+			correction_engine_3: device correction_engine;
+			cam: device camera;
+			comm_unit: device communication_unit;
+			
+			controller_process: process controller.with_threads;
+			
+			
+	end satellite_system.impl;
+	
+	process controller
+		features
+			altitude_in: in data port;
+			engine_1_toggle: out event port;
+			engine_2_toggle: out event port;
+			engine_3_toggle: out event port;
+			cam_take_photo: out event port;
+			cam_photo_in: in data port;
+	end controller;
+	
+	process implementation controller.with_threads
+		subcomponents
+			alt_reader: thread read_altitude;
+		connections
+			alt_connection: port altitude_in -> alt_reader.alt_in;
+	end controller.with_threads;
+	
+	thread read_altitude
+		features
+			alt_in: in data port;
+			alt_out: out data port;
+	end read_altitude;
+		
+	
+	device altitude_sensor
+		features
+			altitude: out data port;
+	end altitude_sensor;
+	
+	device correction_engine
+		features
+			toggle: in event port;
+	end correction_engine;
+	
+	device camera
+		features
+			take_photo: in event port;
+			photo_out: out data port;
+	end camera;
+	
+	device communication_unit
+		features
+			photo_in: in data port;
+			photo_out: out data port;
+			manual_control_in: in event port;
+			controls_in: in event port;
+	end communication_unit;
+	
+
+	
+	
+	
+end satellite_sys;
