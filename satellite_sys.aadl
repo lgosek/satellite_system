@@ -23,6 +23,7 @@ public
 
 	connections
 		photo_from_camera_conn: port cam.photo_out -> camera_control_process.cam_photo_in;
+		photo_to_comm_conn: port camera_control_process.cam_photo_out -> cam_comm.photo_in;
 		alt_conn: port alt_sensor.alt_out -> controller_process.alt_in;
 
 		toggle_manual_controll_conn: port comm_unit.toggle_manual_control -> controller_process.toggle_manual_control;
@@ -40,6 +41,7 @@ end satellite_system.impl;
 	process camera_controller
 		features
 			cam_photo_in: in data port;
+			cam_photo_out: out data port;
 			
 	end camera_controller;
 	
@@ -48,6 +50,7 @@ end satellite_system.impl;
 		photo_send: thread send_photo;
 	connections
 		camera_controller_impl_new_connection: port cam_photo_in -> photo_send.photo_in;
+		camera_controller_conn2: port photo_send.photo_out -> cam_photo_out;
 end camera_controller.impl;
 	
 	process controller
@@ -108,6 +111,7 @@ end controller.with_threads;
 	thread send_photo
 		features
 			photo_in: in data port;
+			photo_out: out data port;
 	end send_photo;
 	
 	thread read_altitude
@@ -157,6 +161,7 @@ end controller.with_threads;
 	device camera_communication
 		features
 			take_photo_signal: out event port;
+			photo_in: in data port;
 	end camera_communication;
 	
 	device gyroscope
