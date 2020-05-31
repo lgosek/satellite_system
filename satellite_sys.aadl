@@ -12,12 +12,13 @@ public
 		correction_engine_3: device correction_engine;
 		cam: device camera;
 		comm_unit: device communication_unit;
+		cam_comm: device camera_communication;
 
 		controller_process: process controller.with_threads;
+		camera_control_process: process camera_controller.impl;
 
 	connections
-		take_photo_signal_conn: port comm_unit.take_photo_signal -> cam.take_photo;
-		photo_from_camera_conn: port cam.photo_out -> controller_process.cam_photo_in;
+		photo_from_camera_conn: port cam.photo_out -> camera_control_process.cam_photo_in;
 		alt_conn: port alt_sensor.alt_out -> controller_process.alt_in;
 
 		toggle_manual_controll_conn: port comm_unit.toggle_manual_control -> controller_process.toggle_manual_control;
@@ -25,7 +26,21 @@ public
 		toggle_engine_1_conn: port controller_process.engine_1_toggle -> correction_engine_1.toggle;
 		toggle_engine_2_conn: port controller_process.engine_2_toggle -> correction_engine_2.toggle;
 		toggle_engine_3_conn: port controller_process.engine_3_toggle -> correction_engine_3.toggle;
+		comm_to_cam_conn: port cam_comm.take_photo_signal -> cam.take_photo;
 end satellite_system.impl;
+	
+	process camera_controller
+		features
+			cam_photo_in: in data port;
+			
+	end camera_controller;
+	
+	process implementation camera_controller.impl
+	subcomponents
+		photo_send: thread send_photo;
+	connections
+		camera_controller_impl_new_connection: port cam_photo_in -> photo_send.photo_in;
+end camera_controller.impl;
 	
 	process controller
 		features
@@ -34,7 +49,6 @@ end satellite_system.impl;
 			engine_1_toggle: out event port;
 			engine_2_toggle: out event port;
 			engine_3_toggle: out event port;
-			cam_photo_in: in data port;
 			alt_in: in data port;
 	end controller;
 	
@@ -42,10 +56,8 @@ end satellite_system.impl;
 	subcomponents
 		alt_reader: thread read_altitude;
 		alt_controller: thread altitude_controll;
-		photo_send: thread send_photo;
 	connections
 		alt_conn: port alt_in -> alt_reader.alt_in;
-		photo_conn: port cam_photo_in -> photo_send.photo_in;
 		internal_alt_conn: port alt_reader.alt_out -> alt_controller.alt_in;
 		manual_controll_toggle_conn: port toggle_manual_control -> alt_controller.toggle_manual_control;
 		manual_controls_conn: port manual_controls_in -> alt_controller.manual_controls;
@@ -94,13 +106,15 @@ end controller.with_threads;
 	
 	device communication_unit
 		features
-			take_photo_signal: out event port;
 			toggle_manual_control: out event port;
 			manual_controls: out event port;
 	end communication_unit;
 	
 
-	
+	device camera_communication
+		features
+			take_photo_signal: out event port;
+	end camera_communication;
 	
 	
 end satellite_sys;

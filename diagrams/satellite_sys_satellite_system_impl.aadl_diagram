@@ -13,6 +13,18 @@
         <seg>alt_conn</seg>
       </bo>
     </element>
+    <element uuid="5fcd59b6-90bc-4740-8e20-8be60b932f49" manual="true">
+      <element uuid="56f37fac-f500-4e10-a24a-3f991c459ad6" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>comm_to_cam_conn</seg>
+      </bo>
+    </element>
     <element uuid="1f2a588b-8006-4ea4-a6ae-e748339ff209" manual="true">
       <element uuid="930ea7a1-b501-445e-96e3-5b5bc662a9f9" manual="true">
         <bo>
@@ -36,26 +48,6 @@
         <seg>connection</seg>
         <seg>photo_from_camera_conn</seg>
       </bo>
-      <bendpoints>
-        <point x="852.0" y="317.0"/>
-        <point x="852.0" y="344.0"/>
-      </bendpoints>
-    </element>
-    <element uuid="138f9706-1172-4b15-8693-c811194c6d1e" manual="true">
-      <element uuid="67bc1365-6b29-404e-8796-0c122647f689" manual="true">
-        <bo>
-          <seg>tag</seg>
-          <seg>unidirectional</seg>
-        </bo>
-      </element>
-      <bo>
-        <seg>connection</seg>
-        <seg>take_photo_signal_conn</seg>
-      </bo>
-      <bendpoints>
-        <point x="557.0" y="314.0"/>
-        <point x="557.0" y="317.0"/>
-      </bendpoints>
     </element>
     <element uuid="914a1ad4-4331-4770-b9df-a3541d966ddb" manual="true">
       <element uuid="4a2ac0ec-57c6-4d4f-ba64-50ef4b4f16df" manual="true">
@@ -164,8 +156,87 @@
         <seg>subcomponent</seg>
         <seg>cam</seg>
       </bo>
-      <position x="555.0" y="264.0"/>
+      <position x="568.0" y="428.0"/>
       <size width="275.0" height="59.0"/>
+    </element>
+    <element uuid="af2f93a7-1542-44dc-81b4-3308e2122338" manual="true">
+      <element uuid="69be8ab8-3c7b-4bfa-8d43-2308dd9d1a74" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>take_photo_signal</seg>
+        </bo>
+        <position x="384.0" y="50.0"/>
+      </element>
+      <element uuid="1b002046-b225-4956-a5e8-e7f15f4ddb87" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cam_comm</seg>
+      </bo>
+      <position x="18.0" y="388.0"/>
+      <size width="517.0" height="171.0"/>
+    </element>
+    <element uuid="12b8626c-a87a-4561-9c29-797da920b932" manual="true">
+      <element uuid="9a7281d5-b77a-464f-82f5-ec5992883211" manual="true">
+        <element uuid="5ff3c1f9-5a60-4ccf-bb0f-f7ba5fc9b23f" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>camera_controller_impl_new_connection</seg>
+        </bo>
+        <bendpoints>
+          <point x="984.0" y="482.0"/>
+          <point x="984.0" y="542.0"/>
+        </bendpoints>
+      </element>
+      <element uuid="f5adb2f9-9176-4df1-ac19-17fae792189f" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>cam_photo_in</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="3a3ae81d-8cd2-4802-891b-431f55902690" manual="true">
+        <element uuid="43960d74-c257-4ecf-84e0-2bf96d712ede" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>photo_in</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <element uuid="4f70e3c7-f149-4d35-8cf4-7f3673138a73" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>sc_type</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>photo_send</seg>
+        </bo>
+        <position x="160.0" y="60.0"/>
+        <size width="279.0" height="60.0"/>
+      </element>
+      <element uuid="022162ce-3778-4fc9-8473-faeaa60ec633" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>camera_control_process</seg>
+      </bo>
+      <position x="898.0" y="428.0"/>
+      <size width="621.0" height="151.0"/>
     </element>
     <element uuid="d7985d56-d5cc-4d04-a485-9a0c1b157a54" manual="true">
       <element uuid="f41e2645-14fa-4fe3-8fc6-40edecee64b1" manual="true" dockArea="right">
@@ -174,13 +245,6 @@
           <seg>manual_controls</seg>
         </bo>
         <position x="401.0" y="59.0"/>
-      </element>
-      <element uuid="6a95286c-6a2b-4a0d-9581-b66bed2d8693" manual="true" dockArea="right">
-        <bo>
-          <seg>feature</seg>
-          <seg>take_photo_signal</seg>
-        </bo>
-        <position x="390.0" y="108.0"/>
       </element>
       <element uuid="193e0e59-4d87-44e9-ac38-ee399dbffe2a" manual="true" dockArea="right">
         <bo>
@@ -287,31 +351,12 @@
           <seg>manual_controls_conn</seg>
         </bo>
       </element>
-      <element uuid="11ed7a8a-b62a-4337-bd84-2beadba5dd8a" manual="true">
-        <element uuid="dede41ad-4f44-49ec-ad61-b345a2b88679" manual="true">
-          <bo>
-            <seg>tag</seg>
-            <seg>unidirectional</seg>
-          </bo>
-        </element>
-        <bo>
-          <seg>connection</seg>
-          <seg>photo_conn</seg>
-        </bo>
-      </element>
       <element uuid="59e4c84c-e25e-4317-bc50-7a6760cf7da0" manual="true" dockArea="left">
         <bo>
           <seg>feature</seg>
           <seg>alt_in</seg>
         </bo>
         <position y="67.0"/>
-      </element>
-      <element uuid="d6d9121d-4aae-4f6d-9cf1-6767e5ca4fef" manual="true" dockArea="left">
-        <bo>
-          <seg>feature</seg>
-          <seg>cam_photo_in</seg>
-        </bo>
-        <position y="244.0"/>
       </element>
       <element uuid="ffd9c7eb-0abf-4b35-bc65-91c82ca46357" manual="true" dockArea="right">
         <bo>
@@ -432,27 +477,6 @@
         <position x="179.0" y="57.0"/>
         <size width="258.0" height="59.0"/>
       </element>
-      <element uuid="66a734c3-2fba-4ccf-843f-eb0814a88e45" manual="true">
-        <element uuid="2618cde0-c95f-4697-845b-b54448420011" manual="true" dockArea="left">
-          <bo>
-            <seg>feature</seg>
-            <seg>photo_in</seg>
-          </bo>
-          <position y="10.0"/>
-        </element>
-        <element uuid="a592d6b4-b556-44fb-ad7e-d5f18e4ced18" manual="true">
-          <bo>
-            <seg>tag</seg>
-            <seg>sc_type</seg>
-          </bo>
-        </element>
-        <bo>
-          <seg>subcomponent</seg>
-          <seg>photo_send</seg>
-        </bo>
-        <position x="179.0" y="234.0"/>
-        <size width="277.0" height="59.0"/>
-      </element>
       <element uuid="a6f332b8-8554-4075-a96d-e5cc089fae54" manual="true">
         <bo>
           <seg>tag</seg>
@@ -534,7 +558,7 @@
       <seg>satellite_system.impl</seg>
     </bo>
     <position x="12.0" y="12.0"/>
-    <size width="2265.0" height="426.0"/>
+    <size width="2265.0" height="819.0"/>
   </element>
   <config type="structure" connectionPrimaryLabelsVisible="false">
     <enabledAadlProperties/>
