@@ -26,7 +26,7 @@ public
 		alt_conn: port alt_sensor.alt_out -> controller_process.alt_in;
 
 		toggle_manual_controll_conn: port comm_unit.toggle_manual_control -> controller_process.toggle_manual_control;
-		manual_controls_conn: port comm_unit.manual_controls -> controller_process.manual_controls_in;
+		manual_controls_conn: feature comm_unit.manual_controls -> controller_process.manual_controls_in;
 		toggle_engine_1_conn: port controller_process.engine_1_toggle -> correction_engine_1.toggle;
 		toggle_engine_2_conn: port controller_process.engine_2_toggle -> correction_engine_2.toggle;
 		toggle_engine_3_conn: port controller_process.engine_3_toggle -> correction_engine_3.toggle;
@@ -53,7 +53,7 @@ end camera_controller.impl;
 	process controller
 		features
 			toggle_manual_control: in event port;
-			manual_controls_in: in event port;
+			manual_controls_in: FEATURE GROUP INVERSE OF satelliteControl;
 			engine_1_toggle: out event port;
 			engine_2_toggle: out event port;
 			engine_3_toggle: out event port;
@@ -72,7 +72,7 @@ end camera_controller.impl;
 		alt_conn: port alt_in -> alt_reader.alt_in;
 		internal_alt_conn: port alt_reader.alt_out -> alt_controller.alt_in;
 		manual_controll_toggle_conn: port toggle_manual_control -> alt_controller.toggle_manual_control;
-		manual_controls_conn: port manual_controls_in -> alt_controller.manual_controls;
+		manual_controls_conn: feature manual_controls_in -> alt_controller.manual_controls;
 		engine_1_controll_conn: port alt_controller.engine_1_control -> engine_1_toggle;
 		engine_2_controll_conn: port alt_controller.engine_2_control -> engine_2_toggle;
 		engine_3_controll_conn: port alt_controller.engine_3_control -> engine_3_toggle;
@@ -81,6 +81,29 @@ end camera_controller.impl;
 		engine_6_controll_conn: port alt_controller.engine_6_control -> engine_6_toggle;
 		rotation_controll_conn: port alt_controller.rotation -> rotation;
 end controller.with_threads;
+	
+	DATA mov_data
+		properties
+			Data_Size => 64 bits; 
+	end mov_data;
+	
+	FEATURE GROUP satelliteControl
+
+		FEATURES
+
+			xLocation: OUT DATA PORT mov_data;
+
+			yLocation: OUT DATA PORT mov_data;
+
+			zLocation: OUT DATA PORT mov_data;
+
+			xRotation: OUT DATA PORT mov_data;
+
+			yRotation: OUT DATA PORT mov_data;
+
+			zRotation: OUT DATA PORT mov_data;
+
+	END satelliteControl;
 	
 	thread send_photo
 		features
@@ -104,7 +127,7 @@ end controller.with_threads;
 			engine_6_control: out event port;
 			rotation: out data port;
 			toggle_manual_control: in event port;
-			manual_controls: in event port;
+			manual_controls: FEATURE GROUP INVERSE OF satelliteControl;
 	end altitude_controll;
 		
 	
@@ -127,7 +150,7 @@ end controller.with_threads;
 	device communication_unit
 		features
 			toggle_manual_control: out event port;
-			manual_controls: out event port;
+			manual_controls: FEATURE GROUP satelliteControl;
 	end communication_unit;
 	
 
