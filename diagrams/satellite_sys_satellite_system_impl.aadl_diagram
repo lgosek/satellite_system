@@ -951,6 +951,34 @@
       <position x="1951.0" y="508.0"/>
       <size width="305.0" height="60.0"/>
     </element>
+    <element uuid="218006a5-4a25-40cd-a3a1-03cbeb70daad" manual="true">
+      <element uuid="b305210d-4e6f-4e23-9415-87de9466f229" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu1</seg>
+      </bo>
+      <position x="120.0" y="57.0"/>
+      <size width="90.0" height="45.0"/>
+    </element>
+    <element uuid="d0cea0f0-3b1f-4d0f-a421-cb34949df2bb" manual="true">
+      <element uuid="05729f09-36c2-4a14-a56c-c49dc7474d9a" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>sc_type</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>cpu2</seg>
+      </bo>
+      <position x="260.0" y="57.0"/>
+      <size width="90.0" height="45.0"/>
+    </element>
     <element uuid="501688a4-f49f-466a-8d8e-90b94d41b1ab" manual="true">
       <element uuid="b59b04dc-638e-41d7-a4bd-3c1de1d8ecef" manual="true" dockArea="left">
         <bo>

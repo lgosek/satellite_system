@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="ASCII"?>
+<instance:SystemInstance xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:instance="http://aadl.info/AADL/2.0/instance" name="satellite_system_impl_Instance" category="system">
+  <componentInstance name="alt_sensor" category="device">
+    <featureInstance name="alt_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.14/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.altitude_sensor"/>
+  </componentInstance>
+  <componentInstance name="correction_engine_1" category="device">
+    <featureInstance name="toggle" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.correction_engine"/>
+  </componentInstance>
+  <componentInstance name="correction_engine_2" category="device">
+    <featureInstance name="toggle" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.2"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.correction_engine"/>
+  </componentInstance>
+  <componentInstance name="correction_engine_3" category="device">
+    <featureInstance name="toggle" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.3"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.correction_engine"/>
+  </componentInstance>
+  <componentInstance name="correction_engine_4" category="device">
+    <featureInstance name="toggle" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.4"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.correction_engine"/>
+  </componentInstance>
+  <componentInstance name="correction_engine_5" category="device">
+    <featureInstance name="toggle" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.5"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.correction_engine"/>
+  </componentInstance>
+  <componentInstance name="correction_engine_6" category="device">
+    <featureInstance name="toggle" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.15/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.6"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.correction_engine"/>
+  </componentInstance>
+  <componentInstance name="cam" category="device">
+    <featureInstance name="photo_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="take_photo" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.16/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.7"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.camera"/>
+  </componentInstance>
+  <componentInstance name="comm_unit" category="device">
+    <featureInstance name="manual_controls" category="featureGroup" direction="in out">
+      <featureInstance name="xLocation" direction="out">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="yLocation" direction="out">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="zLocation" direction="out">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="xRotation" direction="out">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="yRotation" direction="out">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="zRotation" direction="out">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.5"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="toggle_manual_control" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.8"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.communication_unit"/>
+  </componentInstance>
+  <componentInstance name="cam_comm" category="device">
+    <featureInstance name="photo_in">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="take_photo_signal" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.18/@ownedEventPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.9"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.camera_communication"/>
+  </componentInstance>
+  <componentInstance name="gyro" category="device">
+    <featureInstance name="rotation">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.19/@ownedDataPort.0"/>
+    </featureInstance>
+    <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedDeviceSubcomponent.10"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:DeviceType" href="../satellite_sys.aadl#satellite_sys.gyroscope"/>
+  </componentInstance>
+  <componentInstance name="controller_process" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.13"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="manual_controls_in" category="featureGroup" direction="in out">
+      <featureInstance name="xLocation">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="yLocation">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="zLocation">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+      </featureInstance>
+      <featureInstance name="xRotation">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.3"/>
+      </featureInstance>
+      <featureInstance name="yRotation">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.4"/>
+      </featureInstance>
+      <featureInstance name="zRotation">
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+        </ownedPropertyAssociation>
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.5"/>
+      </featureInstance>
+      <feature xsi:type="aadl2:FeatureGroup" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedFeatureGroup.0"/>
+    </featureInstance>
+    <featureInstance name="rotation" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="alt_in">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedDataPort.1"/>
+    </featureInstance>
+    <featureInstance name="toggle_manual_control" category="eventPort">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.0"/>
+    </featureInstance>
+    <featureInstance name="engine_1_toggle" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.1"/>
+    </featureInstance>
+    <featureInstance name="engine_2_toggle" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.2"/>
+    </featureInstance>
+    <featureInstance name="engine_3_toggle" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.3"/>
+    </featureInstance>
+    <featureInstance name="engine_4_toggle" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.4"/>
+    </featureInstance>
+    <featureInstance name="engine_5_toggle" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.5"/>
+    </featureInstance>
+    <featureInstance name="engine_6_toggle" category="eventPort" direction="out">
+      <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.4/@ownedEventPort.6"/>
+    </featureInstance>
+    <componentInstance name="alt_reader" category="thread">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.13"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="2"/>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Compute_Execution_Time"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="30">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="30">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Deadline"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="200">
+            <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Period"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="200">
+            <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.12/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="alt_in">
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="alt_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../satellite_sys.aadl#satellite_sys.read_altitude.impl"/>
+    </componentInstance>
+    <componentInstance name="alt_controller" category="thread">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.13"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="1"/>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Compute_Execution_Time"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="100">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Deadline"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="200">
+            <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Period"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="200">
+            <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.13/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="manual_controls" category="featureGroup" direction="in out">
+        <featureInstance name="xLocation">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+                <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.0"/>
+        </featureInstance>
+        <featureInstance name="yLocation">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+                <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.1"/>
+        </featureInstance>
+        <featureInstance name="zLocation">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+                <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.2"/>
+        </featureInstance>
+        <featureInstance name="xRotation">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+                <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.3"/>
+        </featureInstance>
+        <featureInstance name="yRotation">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+                <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.4"/>
+        </featureInstance>
+        <featureInstance name="zRotation">
+          <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+            <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Memory_Properties.aadl#Memory_Properties.Data_Size"/>
+            <ownedValue>
+              <ownedValue xsi:type="aadl2:IntegerLiteral" value="64">
+                <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.15/@ownedLiteral.0"/>
+              </ownedValue>
+            </ownedValue>
+            <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.6/@ownedPropertyAssociation.0"/>
+          </ownedPropertyAssociation>
+          <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.7/@ownedDataPort.5"/>
+        </featureInstance>
+        <feature xsi:type="aadl2:FeatureGroup" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedFeatureGroup.0"/>
+      </featureInstance>
+      <featureInstance name="alt_in">
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="rotation" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedDataPort.1"/>
+      </featureInstance>
+      <featureInstance name="engine_1_control" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.0"/>
+      </featureInstance>
+      <featureInstance name="engine_2_control" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.1"/>
+      </featureInstance>
+      <featureInstance name="engine_3_control" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.2"/>
+      </featureInstance>
+      <featureInstance name="engine_4_control" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.3"/>
+      </featureInstance>
+      <featureInstance name="engine_5_control" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.4"/>
+      </featureInstance>
+      <featureInstance name="engine_6_control" category="eventPort" direction="out">
+        <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.5"/>
+      </featureInstance>
+      <featureInstance name="toggle_manual_control" category="eventPort">
+        <feature xsi:type="aadl2:EventPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.10/@ownedEventPort.6"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedThreadSubcomponent.1"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../satellite_sys.aadl#satellite_sys.altitude_controll.impl"/>
+    </componentInstance>
+    <connectionInstance name="alt_reader.alt_out -> alt_controller.alt_in" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.1" source="//@componentInstance.11/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.1"/>
+      </connectionReference>
+    </connectionInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../satellite_sys.aadl#satellite_sys.controller.with_threads"/>
+  </componentInstance>
+  <componentInstance name="camera_control_process" category="process">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.14"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <featureInstance name="cam_photo_in">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.0"/>
+    </featureInstance>
+    <featureInstance name="cam_photo_out" direction="out">
+      <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.2/@ownedDataPort.1"/>
+    </featureInstance>
+    <componentInstance name="photo_send" category="thread">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="//@componentInstance.14"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Priority"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="10"/>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Compute_Execution_Time"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RangeValue">
+            <minimum xsi:type="aadl2:IntegerLiteral" value="4000">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+            </minimum>
+            <maximum xsi:type="aadl2:IntegerLiteral" value="4000">
+              <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+            </maximum>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Deadline"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="8000">
+            <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Period"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:IntegerLiteral" value="8000">
+            <unit href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.3"/>
+      </ownedPropertyAssociation>
+      <featureInstance name="photo_in">
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.0"/>
+      </featureInstance>
+      <featureInstance name="photo_out" direction="out">
+        <feature xsi:type="aadl2:DataPort" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.8/@ownedDataPort.1"/>
+      </featureInstance>
+      <subcomponent xsi:type="aadl2:ThreadSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedThreadSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:ThreadImplementation" href="../satellite_sys.aadl#satellite_sys.send_photo.impl"/>
+    </componentInstance>
+    <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessImplementation" href="../satellite_sys.aadl#satellite_sys.camera_controller.impl"/>
+  </componentInstance>
+  <componentInstance name="cpu1" category="processor">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.7/@ownedLiteral.2"/>
+          </ownedListElement>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.0"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../satellite_sys.aadl#satellite_sys.CPU"/>
+  </componentInstance>
+  <componentInstance name="cpu2" category="processor">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:ListValue">
+          <ownedListElement xsi:type="aadl2:NamedValue">
+            <namedValue xsi:type="aadl2:EnumerationLiteral" href="platform:/plugin/org.osate.workspace/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.7/@ownedLiteral.2"/>
+          </ownedListElement>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.20/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedProcessorSubcomponent.1"/>
+    <index>0</index>
+    <classifier xsi:type="aadl2:ProcessorType" href="../satellite_sys.aadl#satellite_sys.CPU"/>
+  </componentInstance>
+  <connectionInstance name="alt_sensor.alt_out -> controller_process.alt_reader.alt_in" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.0/@featureInstance.0" source="//@componentInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.0/@featureInstance.0" destination="//@componentInstance.11/@featureInstance.2">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.2"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.2" destination="//@componentInstance.11/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cam.photo_out -> camera_control_process.photo_send.photo_in" complete="true" kind="portConnection" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.0" source="//@componentInstance.7/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.7/@featureInstance.0" destination="//@componentInstance.12/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@featureInstance.0" destination="//@componentInstance.12/@componentInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_unit.manual_controls.xLocation -> controller_process.alt_controller.manual_controls.xLocation" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.0" source="//@componentInstance.8/@featureInstance.0/@featureInstance.0">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.11/@featureInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.0/@featureInstance.0" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.0">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_unit.manual_controls.yLocation -> controller_process.alt_controller.manual_controls.yLocation" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.1" source="//@componentInstance.8/@featureInstance.0/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.11/@featureInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.0/@featureInstance.1" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.1">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_unit.manual_controls.zLocation -> controller_process.alt_controller.manual_controls.zLocation" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.2" source="//@componentInstance.8/@featureInstance.0/@featureInstance.2">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0/@featureInstance.2" destination="//@componentInstance.11/@featureInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.0/@featureInstance.2" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.2">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_unit.manual_controls.xRotation -> controller_process.alt_controller.manual_controls.xRotation" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.3" source="//@componentInstance.8/@featureInstance.0/@featureInstance.3">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.11/@featureInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.0/@featureInstance.3" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.3">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_unit.manual_controls.yRotation -> controller_process.alt_controller.manual_controls.yRotation" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.4" source="//@componentInstance.8/@featureInstance.0/@featureInstance.4">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0/@featureInstance.4" destination="//@componentInstance.11/@featureInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.0/@featureInstance.4" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.4">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_unit.manual_controls.zRotation -> controller_process.alt_controller.manual_controls.zRotation" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.5" source="//@componentInstance.8/@featureInstance.0/@featureInstance.5">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.0/@featureInstance.5" destination="//@componentInstance.11/@featureInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedFeatureConnection.0"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.0/@featureInstance.5" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.0/@featureInstance.5">
+      <connection xsi:type="aadl2:FeatureConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedFeatureConnection.0"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="comm_unit.toggle_manual_control -> controller_process.alt_controller.toggle_manual_control" complete="true" kind="portConnection" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.9" source="//@componentInstance.8/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.8/@featureInstance.1" destination="//@componentInstance.11/@featureInstance.3">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@featureInstance.3" destination="//@componentInstance.11/@componentInstance.1/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.2"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="cam_comm.take_photo_signal -> cam.take_photo" complete="true" kind="portConnection" destination="//@componentInstance.7/@featureInstance.1" source="//@componentInstance.9/@featureInstance.1">
+    <connectionReference context="/" source="//@componentInstance.9/@featureInstance.1" destination="//@componentInstance.7/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.10"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="controller_process.alt_controller.rotation -> gyro.rotation" complete="true" kind="portConnection" destination="//@componentInstance.10/@featureInstance.0" source="//@componentInstance.11/@componentInstance.1/@featureInstance.2">
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.1/@featureInstance.2" destination="//@componentInstance.11/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.9"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.1" destination="//@componentInstance.10/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.11"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="controller_process.alt_controller.engine_1_control -> correction_engine_1.toggle" complete="true" kind="portConnection" destination="//@componentInstance.1/@featureInstance.0" source="//@componentInstance.11/@componentInstance.1/@featureInstance.3">
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.1/@featureInstance.3" destination="//@componentInstance.11/@featureInstance.4">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.3"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.4" destination="//@componentInstance.1/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.4"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="controller_process.alt_controller.engine_2_control -> correction_engine_2.toggle" complete="true" kind="portConnection" destination="//@componentInstance.2/@featureInstance.0" source="//@componentInstance.11/@componentInstance.1/@featureInstance.4">
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.1/@featureInstance.4" destination="//@componentInstance.11/@featureInstance.5">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.4"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.5" destination="//@componentInstance.2/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.5"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="controller_process.alt_controller.engine_3_control -> correction_engine_3.toggle" complete="true" kind="portConnection" destination="//@componentInstance.3/@featureInstance.0" source="//@componentInstance.11/@componentInstance.1/@featureInstance.5">
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.1/@featureInstance.5" destination="//@componentInstance.11/@featureInstance.6">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.5"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.6" destination="//@componentInstance.3/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.6"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="controller_process.alt_controller.engine_4_control -> correction_engine_4.toggle" complete="true" kind="portConnection" destination="//@componentInstance.4/@featureInstance.0" source="//@componentInstance.11/@componentInstance.1/@featureInstance.6">
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.1/@featureInstance.6" destination="//@componentInstance.11/@featureInstance.7">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.6"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.7" destination="//@componentInstance.4/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.7"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="controller_process.alt_controller.engine_5_control -> correction_engine_5.toggle" complete="true" kind="portConnection" destination="//@componentInstance.5/@featureInstance.0" source="//@componentInstance.11/@componentInstance.1/@featureInstance.7">
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.1/@featureInstance.7" destination="//@componentInstance.11/@featureInstance.8">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.7"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.8" destination="//@componentInstance.5/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.8"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="controller_process.alt_controller.engine_6_control -> correction_engine_6.toggle" complete="true" kind="portConnection" destination="//@componentInstance.6/@featureInstance.0" source="//@componentInstance.11/@componentInstance.1/@featureInstance.8">
+    <connectionReference context="//@componentInstance.11" source="//@componentInstance.11/@componentInstance.1/@featureInstance.8" destination="//@componentInstance.11/@featureInstance.9">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.5/@ownedPortConnection.8"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.11/@featureInstance.9" destination="//@componentInstance.6/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.9"/>
+    </connectionReference>
+  </connectionInstance>
+  <connectionInstance name="camera_control_process.photo_send.photo_out -> cam_comm.photo_in" complete="true" kind="portConnection" destination="//@componentInstance.9/@featureInstance.0" source="//@componentInstance.12/@componentInstance.0/@featureInstance.1">
+    <connectionReference context="//@componentInstance.12" source="//@componentInstance.12/@componentInstance.0/@featureInstance.1" destination="//@componentInstance.12/@featureInstance.1">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.3/@ownedPortConnection.1"/>
+    </connectionReference>
+    <connectionReference context="/" source="//@componentInstance.12/@featureInstance.1" destination="//@componentInstance.9/@featureInstance.0">
+      <connection xsi:type="aadl2:PortConnection" href="../satellite_sys.aadl#/0/@ownedPublicSection/@ownedClassifier.1/@ownedPortConnection.1"/>
+    </connectionReference>
+  </connectionInstance>
+  <systemOperationMode name="No Modes"/>
+  <componentImplementation xsi:type="aadl2:SystemImplementation" href="../satellite_sys.aadl#satellite_sys.satellite_system.impl"/>
+</instance:SystemInstance>

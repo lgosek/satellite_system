@@ -17,6 +17,9 @@ public
 		comm_unit: device communication_unit;
 		cam_comm: device camera_communication;
 		gyro: device gyroscope;
+		
+		cpu1: PROCESSOR CPU;
+		cpu2: PROCESSOR CPU;
 
 		controller_process: process controller.with_threads;
 		camera_control_process: process camera_controller.impl;
@@ -36,6 +39,10 @@ public
 		toggle_engine_6_conn: port controller_process.engine_6_toggle -> correction_engine_6.toggle;
 		comm_to_cam_conn: port cam_comm.take_photo_signal -> cam.take_photo;
 		rotation_conn: port controller_process.rotation -> gyro.rotation;
+		
+		properties
+			Actual_Processor_Binding => (reference (cpu1)) applies to controller_process;
+			Actual_Processor_Binding => (reference (cpu2)) applies to camera_control_process;
 end satellite_system.impl;
 	
 	process camera_controller
@@ -47,7 +54,7 @@ end satellite_system.impl;
 	
 	process implementation camera_controller.impl
 	subcomponents
-		photo_send: thread send_photo;
+		photo_send: thread send_photo.impl;
 	connections
 		camera_controller_impl_new_connection: port cam_photo_in -> photo_send.photo_in;
 		camera_controller_conn2: port photo_send.photo_out -> cam_photo_out;
@@ -69,8 +76,8 @@ end camera_controller.impl;
 	
 	process implementation controller.with_threads
 	subcomponents
-		alt_reader: thread read_altitude;
-		alt_controller: thread altitude_controll;
+		alt_reader: thread read_altitude.impl;
+		alt_controller: thread altitude_controll.impl;
 	connections
 		alt_conn: port alt_in -> alt_reader.alt_in;
 		internal_alt_conn: port alt_reader.alt_out -> alt_controller.alt_in;
@@ -133,7 +140,30 @@ end controller.with_threads;
 			toggle_manual_control: in event port;
 			manual_controls: FEATURE GROUP INVERSE OF satelliteControl;
 	end altitude_controll;
-		
+	
+	thread implementation send_photo.impl
+		properties
+			Priority => 10;
+			Compute_Execution_Time => 4000ms .. 4000ms;
+			Deadline => 8000ms;
+			Period => 8000ms;
+	end send_photo.impl;
+	
+	thread implementation read_altitude.impl
+		properties
+			Priority => 2;
+			Compute_Execution_Time => 30ms .. 30ms;
+			Deadline => 200ms;
+			Period => 200ms;
+	end read_altitude.impl;
+	
+	thread implementation altitude_controll.impl
+		properties
+			Priority => 1;
+			Compute_Execution_Time => 100ms .. 100ms;
+			Deadline => 200ms;
+			Period => 200ms;
+	end altitude_controll.impl;
 	
 	device altitude_sensor
 		features
@@ -168,6 +198,11 @@ end controller.with_threads;
 		features
 			rotation: in data port;
 	end gyroscope;
+	
+	PROCESSOR CPU
+		PROPERTIES 
+			Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL); 
+	END CPU;
 	
 	
 end satellite_sys;
