@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="ASCII"?>
 <diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
   <element uuid="d27d615b-9b8c-40c3-b962-eb061cd8314e" manual="true">
+    <element uuid="4a3052d3-51ea-439a-a5c7-c6e06e81d5db" manual="true">
+      <element uuid="6c8e62fd-1ad5-48c7-b767-62420f70e293" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>a1</seg>
+      </bo>
+    </element>
+    <element uuid="f7b1387b-67bc-4f48-8ad7-0d14292ac40f" manual="true">
+      <element uuid="f68eddb0-4c6a-4215-8456-25c68a98a793" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>a2</seg>
+      </bo>
+    </element>
+    <element uuid="873df48e-4e86-44ab-8899-d33469808b3d" manual="true">
+      <element uuid="cc681a7b-a164-4a27-b1f9-179dcabe7329" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>a3</seg>
+      </bo>
+    </element>
+    <element uuid="9a24460e-ee3c-41e5-8497-854a408b9ea0" manual="true">
+      <element uuid="452668e6-c997-40f0-908a-e1e15d12e279" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>a4</seg>
+      </bo>
+    </element>
+    <element uuid="726975e5-f854-4d2e-a875-2fa072a59bb0" manual="true">
+      <element uuid="ee22dee2-c504-4564-a3f5-4823dd916322" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>a5</seg>
+      </bo>
+    </element>
+    <element uuid="fa5269c6-d348-4b24-be94-d7e51827e78e" manual="true">
+      <element uuid="9f6caa60-56bf-4786-865b-02b16f100d90" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>a6</seg>
+      </bo>
+    </element>
+    <element uuid="a078703f-e5d5-4c14-856a-5e933184a39a" manual="true">
+      <element uuid="bb57ead9-d436-4a80-a7fd-aae25efd6bba" manual="true">
+        <bo>
+          <seg>tag</seg>
+          <seg>unidirectional</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>connection</seg>
+        <seg>a7</seg>
+      </bo>
+    </element>
     <element uuid="cd5538ff-bb06-4340-b926-a0dec0383bcf" manual="true">
       <element uuid="12df7100-3b3f-4780-8e1d-d8f0ff79646d" manual="true">
         <bo>
@@ -999,6 +1083,29 @@
       </bo>
       <position x="1953.0" y="589.0"/>
       <size width="302.0" height="60.0"/>
+    </element>
+    <element uuid="7ad48600-0735-458a-be9d-54ec8cbf2fec" manual="true">
+      <element uuid="5f551faa-341a-4bfa-bf7a-e5d39a4f8060" manual="true" dockArea="left">
+        <bo>
+          <seg>feature</seg>
+          <seg>vme</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>ram</seg>
+      </bo>
+      <position x="601.0" y="12.0"/>
+      <size width="185.0" height="60.0"/>
+    </element>
+    <element uuid="5796bfad-66d7-4190-985b-d2011d92ce20" manual="true">
+      <bo>
+        <seg>subcomponent</seg>
+        <seg>vme</seg>
+      </bo>
+      <position x="460.0" y="24.0"/>
+      <size width="89.0" height="35.0"/>
     </element>
     <bo>
       <seg>classifier</seg>

@@ -1,5 +1,7 @@
 package satellite_sys
 public
+	with deployment;
+	with data_model;
 	
 	system satellite_system
 	end satellite_system;
@@ -23,6 +25,9 @@ public
 
 		controller_process: process controller.with_threads;
 		camera_control_process: process camera_controller.impl;
+		
+		VME: BUS VME;
+		RAM: MEMORY RAM;
 
 	connections
 		photo_from_camera_conn: port cam.photo_out -> camera_control_process.cam_photo_in;
@@ -40,15 +45,36 @@ public
 		comm_to_cam_conn: port cam_comm.take_photo_signal -> cam.take_photo;
 		rotation_conn: port controller_process.rotation -> gyro.rotation;
 		
+		A1: BUS ACCESS VME -> cpu1.VME;
+		A2: BUS ACCESS VME -> cpu2.VME;
+		A3: BUS ACCESS VME -> RAM.VME;
+		A4: BUS ACCESS VME -> alt_sensor.VME;
+		A5: BUS ACCESS VME -> cam.VME;
+		A6: BUS ACCESS VME -> comm_unit.VME;
+		A7: BUS ACCESS VME -> cam_comm.VME;
+		
+		
+		
 		properties
 			Actual_Processor_Binding => (reference (cpu1)) applies to controller_process;
 			Actual_Processor_Binding => (reference (cpu2)) applies to camera_control_process;
+			Actual_Connection_Binding => (reference (VME)) applies to alt_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_1_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_2_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_3_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_4_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_5_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_6_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to rotation_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to toggle_manual_controll_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to photo_to_comm_conn;
+			Actual_Connection_Binding => (reference (VME)) applies to photo_from_camera_conn;
 end satellite_system.impl;
 	
 	process camera_controller
 		features
-			cam_photo_in: in data port;
-			cam_photo_out: out data port;
+			cam_photo_in: in data port photo_data;
+			cam_photo_out: out data port photo_data;
 			
 	end camera_controller;
 	
@@ -70,8 +96,8 @@ end camera_controller.impl;
 			engine_4_toggle: out event port;
 			engine_5_toggle: out event port;
 			engine_6_toggle: out event port;
-			rotation: out data port;
-			alt_in: in data port;
+			rotation: out data port mov_data;
+			alt_in: in data port mov_data;
 	end controller;
 	
 	process implementation controller.with_threads
@@ -94,8 +120,13 @@ end controller.with_threads;
 	
 	DATA mov_data
 		properties
-			Data_Size => 64 bits; 
+			Data_Model::Data_Representation => integer;
 	end mov_data;
+	
+	DATA photo_data
+		properties
+			Data_Model::Data_Representation => integer;
+	end photo_data;
 	
 	FEATURE GROUP satelliteControl
 
@@ -117,26 +148,26 @@ end controller.with_threads;
 	
 	thread send_photo
 		features
-			photo_in: in data port;
-			photo_out: out data port;
+			photo_in: in data port photo_data;
+			photo_out: out data port photo_data;
 	end send_photo;
 	
 	thread read_altitude
 		features
-			alt_in: in data port;
-			alt_out: out data port;
+			alt_in: in data port mov_data;
+			alt_out: out data port mov_data;
 	end read_altitude;
 	
 	thread altitude_controll
 		features
-			alt_in: in data port;
+			alt_in: in data port mov_data;
 			engine_1_control: out event port;
 			engine_2_control: out event port;
 			engine_3_control: out event port;
 			engine_4_control: out event port;
 			engine_5_control: out event port;
 			engine_6_control: out event port;
-			rotation: out data port;
+			rotation: out data port mov_data;
 			toggle_manual_control: in event port;
 			manual_controls: FEATURE GROUP INVERSE OF satelliteControl;
 	end altitude_controll;
@@ -167,7 +198,8 @@ end controller.with_threads;
 	
 	device altitude_sensor
 		features
-			alt_out: out data port;
+			alt_out: out data port mov_data;
+			VME: REQUIRES BUS ACCESS VME;
 	end altitude_sensor;
 	
 	device correction_engine
@@ -178,31 +210,47 @@ end controller.with_threads;
 	device camera
 		features
 			take_photo: in event port;
-			photo_out: out data port;
+			photo_out: out data port photo_data;
+			VME: REQUIRES BUS ACCESS VME;
 	end camera;
 	
 	device communication_unit
 		features
 			toggle_manual_control: out event port;
 			manual_controls: FEATURE GROUP satelliteControl;
+			VME: REQUIRES BUS ACCESS VME;
 	end communication_unit;
 	
 
 	device camera_communication
 		features
 			take_photo_signal: out event port;
-			photo_in: in data port;
+			photo_in: in data port photo_data;
+			VME: REQUIRES BUS ACCESS VME;
 	end camera_communication;
 	
 	device gyroscope
 		features
-			rotation: in data port;
+			rotation: in data port mov_data;
 	end gyroscope;
 	
 	PROCESSOR CPU
+		FEATURES
+			VME: REQUIRES BUS ACCESS VME;
 		PROPERTIES 
+			Clock_Period => 200ns;
 			Scheduling_Protocol => (POSIX_1003_HIGHEST_PRIORITY_FIRST_PROTOCOL); 
+			Deployment::Execution_Platform => Native;
+			Priority_Range => 0 .. 255;
 	END CPU;
+	
+	MEMORY RAM
+		FEATURES
+			VME: REQUIRES BUS ACCESS VME;
+	END RAM;
+	
+	BUS VME
+	END VME;
 	
 	
 end satellite_sys;
