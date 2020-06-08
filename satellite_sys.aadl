@@ -88,14 +88,14 @@ end camera_controller.impl;
 	
 	process controller
 		features
-			toggle_manual_control: in event port;
+			toggle_manual_control: in data port toggle_data;
 			manual_controls_in: FEATURE GROUP INVERSE OF satelliteControl;
-			engine_1_toggle: out event port;
-			engine_2_toggle: out event port;
-			engine_3_toggle: out event port;
-			engine_4_toggle: out event port;
-			engine_5_toggle: out event port;
-			engine_6_toggle: out event port;
+			engine_1_toggle: out data port toggle_data;
+			engine_2_toggle: out data port toggle_data;
+			engine_3_toggle: out data port toggle_data;
+			engine_4_toggle: out data port toggle_data;
+			engine_5_toggle: out data port toggle_data;
+			engine_6_toggle: out data port toggle_data;
 			rotation: out data port mov_data;
 			alt_in: in data port mov_data;
 	end controller;
@@ -117,6 +117,11 @@ end camera_controller.impl;
 		engine_6_controll_conn: port alt_controller.engine_6_control -> engine_6_toggle;
 		rotation_controll_conn: port alt_controller.rotation -> rotation;
 end controller.with_threads;
+
+	DATA toggle_data
+		properties
+			Data_Model::Data_Representation => boolean;
+	end toggle_data;
 	
 	DATA mov_data
 		properties
@@ -146,6 +151,55 @@ end controller.with_threads;
 
 	END satelliteControl;
 	
+--	subprograms
+
+	subprogram read_altitude_spg
+		features
+			alt_in: in parameter mov_data;
+			alt_out: out parameter mov_data;
+			
+		properties
+			source_language => (C);
+			source_name => "read_altitude_spg";
+			source_text => ("satellite_system.c");
+	end read_altitude_spg;
+	
+	subprogram send_photo_spg
+		features
+			photo_in: in parameter photo_data;
+			photo_out: out parameter photo_data;
+			
+		properties
+			source_language => (C);
+			source_name => "send_photo_spg";
+			source_text => ("satellite_system.c");
+	end send_photo_spg;
+	
+	subprogram alt_controll_spg
+		features
+			alt_in: in parameter mov_data;
+			toggle_manual_control: in parameter toggle_data;
+			xLocation: in parameter mov_data;
+			yLocation: in parameter mov_data;
+			zLocation: in parameter mov_data;
+			xRotation: in parameter mov_data;
+			yRotation: in parameter mov_data;
+			zRotation: in parameter mov_data;
+			
+			eng1Out: out parameter toggle_data;
+			eng2Out: out parameter toggle_data;
+			eng3Out: out parameter toggle_data;
+			eng4Out: out parameter toggle_data;
+			eng5Out: out parameter toggle_data;
+			eng6Out: out parameter toggle_data;
+			rotation: out parameter mov_data;
+			
+		properties
+			source_language => (C);
+			source_name => "altitude_controll_spg";
+			source_text => ("satellite_system.c");
+	end alt_controll_spg;
+	
 	thread send_photo
 		features
 			photo_in: in data port photo_data;
@@ -161,18 +215,25 @@ end controller.with_threads;
 	thread altitude_controll
 		features
 			alt_in: in data port mov_data;
-			engine_1_control: out event port;
-			engine_2_control: out event port;
-			engine_3_control: out event port;
-			engine_4_control: out event port;
-			engine_5_control: out event port;
-			engine_6_control: out event port;
+			engine_1_control: out data port toggle_data;
+			engine_2_control: out data port toggle_data;
+			engine_3_control: out data port toggle_data;
+			engine_4_control: out data port toggle_data;
+			engine_5_control: out data port toggle_data;
+			engine_6_control: out data port toggle_data;
 			rotation: out data port mov_data;
-			toggle_manual_control: in event port;
+			toggle_manual_control: in data port toggle_data;
 			manual_controls: FEATURE GROUP INVERSE OF satelliteControl;
 	end altitude_controll;
 	
 	thread implementation send_photo.impl
+		calls
+			MyCalls: {
+				send_photo_spg: subprogram send_photo_spg;
+			};
+		connections
+			c0: parameter photo_in -> send_photo_spg.photo_in;
+			c1: parameter send_photo_spg.photo_out -> photo_out;
 		properties
 			Priority => 10;
 			Compute_Execution_Time => 4000ms .. 4000ms;
@@ -181,6 +242,13 @@ end controller.with_threads;
 	end send_photo.impl;
 	
 	thread implementation read_altitude.impl
+		calls
+			MyCalls: {
+				read_alt_spg: subprogram read_altitude_spg;
+			};
+		connections
+			c0: parameter alt_in -> read_alt_spg.alt_in;
+			c1: parameter read_alt_spg.alt_out -> alt_out;
 		properties
 			Priority => 2;
 			Compute_Execution_Time => 30ms .. 30ms;
@@ -189,6 +257,27 @@ end controller.with_threads;
 	end read_altitude.impl;
 	
 	thread implementation altitude_controll.impl
+		calls
+			MyCalls: {
+				alt_controll_spg: subprogram alt_controll_spg;
+			};
+		connections
+			c0: parameter alt_in -> alt_controll_spg.alt_in;
+			c1: parameter toggle_manual_control -> alt_controll_spg.toggle_manual_control;
+			c2: parameter manual_controls.xLocation -> alt_controll_spg.xLocation;
+			c3: parameter manual_controls.yLocation -> alt_controll_spg.yLocation;
+			c4: parameter manual_controls.zLocation -> alt_controll_spg.zLocation;
+			c5: parameter manual_controls.xRotation -> alt_controll_spg.xRotation;
+			c6: parameter manual_controls.yRotation -> alt_controll_spg.yRotation;
+			c7: parameter manual_controls.zRotation -> alt_controll_spg.zRotation;
+			
+			c8: parameter alt_controll_spg.eng1Out -> engine_1_control; 
+			c9: parameter alt_controll_spg.eng2Out -> engine_2_control;
+			c10: parameter alt_controll_spg.eng3Out -> engine_3_control;
+			c11: parameter alt_controll_spg.eng4Out -> engine_4_control;
+			c12: parameter alt_controll_spg.eng5Out -> engine_5_control;
+			c13: parameter alt_controll_spg.eng6Out -> engine_6_control;
+			c14: parameter alt_controll_spg.rotation -> rotation;
 		properties
 			Priority => 1;
 			Compute_Execution_Time => 100ms .. 100ms;
@@ -204,7 +293,7 @@ end controller.with_threads;
 	
 	device correction_engine
 		features
-			toggle: in event port;
+			toggle: in data port toggle_data;
 	end correction_engine;
 	
 	device camera
@@ -216,7 +305,7 @@ end controller.with_threads;
 	
 	device communication_unit
 		features
-			toggle_manual_control: out event port;
+			toggle_manual_control: out data port toggle_data;
 			manual_controls: FEATURE GROUP satelliteControl;
 			VME: REQUIRES BUS ACCESS VME;
 	end communication_unit;
