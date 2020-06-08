@@ -58,6 +58,8 @@ public
 		properties
 			Actual_Processor_Binding => (reference (cpu1)) applies to controller_process;
 			Actual_Processor_Binding => (reference (cpu2)) applies to camera_control_process;
+			Actual_Memory_Binding => (reference (RAM)) applies to controller_process;
+			Actual_Memory_Binding => (reference (RAM)) applies to camera_control_process;
 			Actual_Connection_Binding => (reference (VME)) applies to alt_conn;
 			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_1_conn;
 			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_2_conn;
