@@ -42,7 +42,7 @@ public
 		toggle_engine_4_conn: port controller_process.engine_4_toggle -> correction_engine_4.toggle;
 		toggle_engine_5_conn: port controller_process.engine_5_toggle -> correction_engine_5.toggle;
 		toggle_engine_6_conn: port controller_process.engine_6_toggle -> correction_engine_6.toggle;
-		comm_to_cam_conn: port cam_comm.take_photo_signal -> cam.take_photo;
+--		comm_to_cam_conn: port cam_comm.take_photo_signal -> cam.take_photo;
 		rotation_conn: port controller_process.rotation -> gyro.rotation;
 		
 		A1: BUS ACCESS VME -> cpu1.VME;
@@ -77,16 +77,19 @@ end satellite_system.impl;
 		features
 			cam_photo_in: in data port photo_data;
 			cam_photo_out: out data port photo_data;
-			
+--			cam_trigger_in: in event port;
+--			cam_trigger_out: out event port;
 	end camera_controller;
 	
 	process implementation camera_controller.impl
 	subcomponents
 		photo_send: thread send_photo.impl;
+--		photo_trigger: thread get_photo.impl;
 	connections
 		camera_controller_impl_new_connection: port cam_photo_in -> photo_send.photo_in;
 		camera_controller_conn2: port photo_send.photo_out -> cam_photo_out;
 end camera_controller.impl;
+	
 	
 	process controller
 		features
@@ -208,6 +211,12 @@ end controller.with_threads;
 			photo_out: out data port photo_data;
 	end send_photo;
 	
+--	thread get_photo
+--		features
+--			photo_trigger_in: in data port toggle_data;
+--			phtot_tigger_out: out data port toggle_data;
+--	end get_photo;
+	
 	thread read_altitude
 		features
 			alt_in: in data port mov_data;
@@ -242,6 +251,16 @@ end controller.with_threads;
 			Deadline => 8000ms;
 			Period => 8000ms;
 	end send_photo.impl;
+	
+--	thread implementation get_photo.impl
+--		calls
+--			MyCalls: {
+--				get_photo_spg: subprogram get_photo_spg;
+--			};
+--		connections
+--			c0: parameter photo_trigger_in -> get_photo_spg.photo_trigger_in;
+--			
+--	end get_photo.impl;
 	
 	thread implementation read_altitude.impl
 		calls
@@ -300,7 +319,7 @@ end controller.with_threads;
 	
 	device camera
 		features
-			take_photo: in event port;
+--			take_photo: in event port;
 			photo_out: out data port photo_data;
 			VME: REQUIRES BUS ACCESS VME;
 	end camera;
@@ -315,7 +334,7 @@ end controller.with_threads;
 
 	device camera_communication
 		features
-			take_photo_signal: out event port;
+--			take_photo_signal: out event port;
 			photo_in: in data port photo_data;
 			VME: REQUIRES BUS ACCESS VME;
 	end camera_communication;
