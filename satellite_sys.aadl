@@ -1,7 +1,7 @@
 package satellite_sys
 public
 	with deployment;
-	with data_model;
+	with data_types;
 	
 	system satellite_system
 	end satellite_system;
@@ -15,6 +15,7 @@ public
 		correction_engine_4: device correction_engine;
 		correction_engine_5: device correction_engine;
 		correction_engine_6: device correction_engine;
+		
 		cam: device camera;
 		comm_unit: device communication_unit;
 		cam_comm: device camera_communication;
@@ -30,20 +31,25 @@ public
 		RAM: MEMORY RAM;
 
 	connections
-		photo_from_camera_conn: port cam.photo_out -> camera_control_process.cam_photo_in;
-		photo_to_comm_conn: port camera_control_process.cam_photo_out -> cam_comm.photo_in;
-		alt_conn: port alt_sensor.alt_out -> controller_process.alt_in;
+		c1: port cam.photo_out -> camera_control_process.cam_photo_in;
+		c2: port camera_control_process.cam_photo_out -> cam_comm.photo_in;
+		c3: port alt_sensor.alt_out -> controller_process.alt_in;
 
-		toggle_manual_controll_conn: port comm_unit.toggle_manual_control -> controller_process.toggle_manual_control;
-		manual_controls_conn: feature comm_unit.manual_controls -> controller_process.manual_controls_in;
-		toggle_engine_1_conn: port controller_process.engine_1_toggle -> correction_engine_1.toggle;
-		toggle_engine_2_conn: port controller_process.engine_2_toggle -> correction_engine_2.toggle;
-		toggle_engine_3_conn: port controller_process.engine_3_toggle -> correction_engine_3.toggle;
-		toggle_engine_4_conn: port controller_process.engine_4_toggle -> correction_engine_4.toggle;
-		toggle_engine_5_conn: port controller_process.engine_5_toggle -> correction_engine_5.toggle;
-		toggle_engine_6_conn: port controller_process.engine_6_toggle -> correction_engine_6.toggle;
+		c4: port comm_unit.toggle_manual_control -> controller_process.toggle_manual_control;
+		--manual_controls_conn: feature comm_unit.manual_controls -> controller_process.manual_controls_in;
+		c5: port comm_unit.manual_controls -> controller_process.manual_controls;
+		
+		c6: port controller_process.engine_1_toggle -> correction_engine_1.toggle;
+		c7: port controller_process.engine_2_toggle -> correction_engine_2.toggle;
+		c8: port controller_process.engine_3_toggle -> correction_engine_3.toggle;
+		c9: port controller_process.engine_4_toggle -> correction_engine_4.toggle;
+		c10: port controller_process.engine_5_toggle -> correction_engine_5.toggle;
+		c11: port controller_process.engine_6_toggle -> correction_engine_6.toggle;
 --		comm_to_cam_conn: port cam_comm.take_photo_signal -> cam.take_photo;
-		rotation_conn: port controller_process.rotation -> gyro.rotation;
+		c12: port controller_process.rotation -> gyro.rotation;
+		
+		c13: port cam_comm.take_photo_signal -> camera_control_process.cam_trigger_in;
+		c14: port camera_control_process.cam_trigger_out -> cam.take_photo;
 		
 		A1: BUS ACCESS VME -> cpu1.VME;
 		A2: BUS ACCESS VME -> cpu2.VME;
@@ -52,191 +58,52 @@ public
 		A5: BUS ACCESS VME -> cam.VME;
 		A6: BUS ACCESS VME -> comm_unit.VME;
 		A7: BUS ACCESS VME -> cam_comm.VME;
+		A8: BUS ACCESS VME -> correction_engine_1.VME;
+		A9: BUS ACCESS VME -> correction_engine_2.VME;
+		A10: BUS ACCESS VME -> correction_engine_3.VME;
+		A11: BUS ACCESS VME -> correction_engine_4.VME;
+		A12: BUS ACCESS VME -> correction_engine_5.VME;
+		A13: BUS ACCESS VME -> correction_engine_6.VME;
+		A14: bus access VME -> gyro.VME;
 		
 		
 		
 		properties
 			Actual_Processor_Binding => (reference (cpu1)) applies to controller_process;
 			Actual_Processor_Binding => (reference (cpu2)) applies to camera_control_process;
-			Actual_Memory_Binding => (reference (RAM)) applies to controller_process;
-			Actual_Memory_Binding => (reference (RAM)) applies to camera_control_process;
-			Actual_Connection_Binding => (reference (VME)) applies to alt_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_1_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_2_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_3_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_4_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_5_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to toggle_engine_6_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to rotation_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to toggle_manual_controll_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to photo_to_comm_conn;
-			Actual_Connection_Binding => (reference (VME)) applies to photo_from_camera_conn;
+			Actual_Memory_Binding => (reference (ram)) applies to controller_process;
+			Actual_Memory_Binding => (reference (ram)) applies to camera_control_process;
 end satellite_system.impl;
 	
+	
+	-- ==================Camera process
 	process camera_controller
 		features
-			cam_photo_in: in data port photo_data;
-			cam_photo_out: out data port photo_data;
---			cam_trigger_in: in event port;
---			cam_trigger_out: out event port;
+			cam_photo_in: in data port data_types::photo_data;
+			cam_photo_out: out data port data_types::photo_data;
+			cam_trigger_in: in event port;
+			cam_trigger_out: out event port;
 	end camera_controller;
 	
+	-- --------------Implementation
 	process implementation camera_controller.impl
 	subcomponents
 		photo_send: thread send_photo.impl;
---		photo_trigger: thread get_photo.impl;
+		photo_trigger: thread get_photo.impl;
 	connections
-		camera_controller_impl_new_connection: port cam_photo_in -> photo_send.photo_in;
-		camera_controller_conn2: port photo_send.photo_out -> cam_photo_out;
-end camera_controller.impl;
-	
-	
-	process controller
-		features
-			toggle_manual_control: in data port toggle_data;
-			manual_controls_in: FEATURE GROUP INVERSE OF satelliteControl;
-			engine_1_toggle: out data port toggle_data;
-			engine_2_toggle: out data port toggle_data;
-			engine_3_toggle: out data port toggle_data;
-			engine_4_toggle: out data port toggle_data;
-			engine_5_toggle: out data port toggle_data;
-			engine_6_toggle: out data port toggle_data;
-			rotation: out data port mov_data;
-			alt_in: in data port mov_data;
-	end controller;
-	
-	process implementation controller.with_threads
-	subcomponents
-		alt_reader: thread read_altitude.impl;
-		alt_controller: thread altitude_controll.impl;
-	connections
-		alt_conn: port alt_in -> alt_reader.alt_in;
-		internal_alt_conn: port alt_reader.alt_out -> alt_controller.alt_in;
-		manual_controll_toggle_conn: port toggle_manual_control -> alt_controller.toggle_manual_control;
-		manual_controls_conn: feature manual_controls_in -> alt_controller.manual_controls;
-		engine_1_controll_conn: port alt_controller.engine_1_control -> engine_1_toggle;
-		engine_2_controll_conn: port alt_controller.engine_2_control -> engine_2_toggle;
-		engine_3_controll_conn: port alt_controller.engine_3_control -> engine_3_toggle;
-		engine_4_controll_conn: port alt_controller.engine_4_control -> engine_4_toggle;
-		engine_5_controll_conn: port alt_controller.engine_5_control -> engine_5_toggle;
-		engine_6_controll_conn: port alt_controller.engine_6_control -> engine_6_toggle;
-		rotation_controll_conn: port alt_controller.rotation -> rotation;
-end controller.with_threads;
+		c1: port cam_trigger_in -> photo_trigger.photo_trigger_in;
+		c2: port photo_trigger.photo_trigger_out -> cam_trigger_out;
+		c3: port cam_photo_in -> photo_send.photo_in;
+		c4: port photo_send.photo_out -> cam_photo_out;
+	end camera_controller.impl;
 
-	DATA toggle_data
-		properties
-			Data_Model::Data_Representation => boolean;
-	end toggle_data;
-	
-	DATA mov_data
-		properties
-			Data_Model::Data_Representation => integer;
-	end mov_data;
-	
-	DATA photo_data
-		properties
-			Data_Model::Data_Representation => integer;
-	end photo_data;
-	
-	FEATURE GROUP satelliteControl
-
-		FEATURES
-
-			xLocation: OUT DATA PORT mov_data;
-
-			yLocation: OUT DATA PORT mov_data;
-
-			zLocation: OUT DATA PORT mov_data;
-
-			xRotation: OUT DATA PORT mov_data;
-
-			yRotation: OUT DATA PORT mov_data;
-
-			zRotation: OUT DATA PORT mov_data;
-
-	END satelliteControl;
-	
---	subprograms
-
-	subprogram read_altitude_spg
-		features
-			alt_in: in parameter mov_data;
-			alt_out: out parameter mov_data;
-			
-		properties
-			source_language => (C);
-			source_name => "read_altitude_spg";
-			source_text => ("satellite_system.c");
-	end read_altitude_spg;
-	
-	subprogram send_photo_spg
-		features
-			photo_in: in parameter photo_data;
-			photo_out: out parameter photo_data;
-			
-		properties
-			source_language => (C);
-			source_name => "send_photo_spg";
-			source_text => ("satellite_system.c");
-	end send_photo_spg;
-	
-	subprogram alt_controll_spg
-		features
-			alt_in: in parameter mov_data;
-			toggle_manual_control: in parameter toggle_data;
-			xLocation: in parameter mov_data;
-			yLocation: in parameter mov_data;
-			zLocation: in parameter mov_data;
-			xRotation: in parameter mov_data;
-			yRotation: in parameter mov_data;
-			zRotation: in parameter mov_data;
-			
-			eng1Out: out parameter toggle_data;
-			eng2Out: out parameter toggle_data;
-			eng3Out: out parameter toggle_data;
-			eng4Out: out parameter toggle_data;
-			eng5Out: out parameter toggle_data;
-			eng6Out: out parameter toggle_data;
-			rotation: out parameter mov_data;
-			
-		properties
-			source_language => (C);
-			source_name => "altitude_controll_spg";
-			source_text => ("satellite_system.c");
-	end alt_controll_spg;
-	
+	-- -------------------- Send Photo Thread
 	thread send_photo
 		features
-			photo_in: in data port photo_data;
-			photo_out: out data port photo_data;
+			photo_in: in data port data_types::photo_data;
+			photo_out: out data port data_types::photo_data;
 	end send_photo;
-	
---	thread get_photo
---		features
---			photo_trigger_in: in data port toggle_data;
---			phtot_tigger_out: out data port toggle_data;
---	end get_photo;
-	
-	thread read_altitude
-		features
-			alt_in: in data port mov_data;
-			alt_out: out data port mov_data;
-	end read_altitude;
-	
-	thread altitude_controll
-		features
-			alt_in: in data port mov_data;
-			engine_1_control: out data port toggle_data;
-			engine_2_control: out data port toggle_data;
-			engine_3_control: out data port toggle_data;
-			engine_4_control: out data port toggle_data;
-			engine_5_control: out data port toggle_data;
-			engine_6_control: out data port toggle_data;
-			rotation: out data port mov_data;
-			toggle_manual_control: in data port toggle_data;
-			manual_controls: FEATURE GROUP INVERSE OF satelliteControl;
-	end altitude_controll;
-	
+	-- --------------------- Thread implementation
 	thread implementation send_photo.impl
 		calls
 			MyCalls: {
@@ -247,21 +114,96 @@ end controller.with_threads;
 			c1: parameter send_photo_spg.photo_out -> photo_out;
 		properties
 			Priority => 10;
-			Compute_Execution_Time => 4000ms .. 4000ms;
-			Deadline => 8000ms;
-			Period => 8000ms;
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 200ms .. 250ms;
+			Deadline => 300ms;
+			Period => 300ms;
 	end send_photo.impl;
 	
---	thread implementation get_photo.impl
---		calls
---			MyCalls: {
---				get_photo_spg: subprogram get_photo_spg;
---			};
---		connections
---			c0: parameter photo_trigger_in -> get_photo_spg.photo_trigger_in;
---			
---	end get_photo.impl;
+	-- ---------------------- Subprogram
+	subprogram send_photo_spg
+			features
+				photo_in: in parameter data_types::photo_data;
+				photo_out: out parameter data_types::photo_data;
+				
+			properties
+				source_language => (Ada95);
+				source_name => "satellite.send_photo";
+		end send_photo_spg;
+		
+	-- ------------------- Thread get_photo		
+	thread get_photo
+		features
+			photo_trigger_in: in event port;
+			photo_trigger_out: out event port;
+	end get_photo;
 	
+	-- --------------------- thread implementation
+	thread implementation get_photo.impl
+		calls
+			MyCalls: {
+				get_photo_spg: subprogram get_photo_spg;
+			};		
+		properties
+			Priority => 5;
+			Dispatch_Protocol => Periodic;
+			Compute_Execution_Time => 5ms .. 5ms;
+			Deadline => 300ms;
+			Period => 300ms;
+	end get_photo.impl;
+	
+	-- ---------------- subprogram
+	subprogram get_photo_spg
+		properties
+			source_language => (Ada95);
+			source_name => "satellite.get_photo";
+	end get_photo_spg;
+	
+	
+	-- ================ Controller process
+	process controller
+		features
+			alt_in: in data port data_types::mov_data;
+			toggle_manual_control: in data port data_types::toggle_data;
+			
+			manual_controls: in data port data_types::Satellite_Controls.impl;
+			
+			engine_1_toggle: out data port data_types::toggle_data;
+			engine_2_toggle: out data port data_types::toggle_data;
+			engine_3_toggle: out data port data_types::toggle_data;
+			engine_4_toggle: out data port data_types::toggle_data;
+			engine_5_toggle: out data port data_types::toggle_data;
+			engine_6_toggle: out data port data_types::toggle_data;
+			rotation: out data port data_types::mov_data;
+	end controller;
+	
+	-- -------------------- Controller implementation
+	process implementation controller.with_threads
+	subcomponents
+		alt_reader: thread read_altitude.impl;
+		alt_controller: thread altitude_controll.impl;
+	connections
+		c1: port alt_in -> alt_reader.alt_in;
+		c2: port alt_reader.alt_out -> alt_controller.alt_in;
+		c3: port toggle_manual_control -> alt_controller.toggle_manual_control;
+		c4: port manual_controls -> alt_controller.manual_controls;
+		c5: port alt_controller.engine_1_control -> engine_1_toggle;
+		c6: port alt_controller.engine_2_control -> engine_2_toggle;
+		c7: port alt_controller.engine_3_control -> engine_3_toggle;
+		c8: port alt_controller.engine_4_control -> engine_4_toggle;
+		c9: port alt_controller.engine_5_control -> engine_5_toggle;
+		c10: port alt_controller.engine_6_control -> engine_6_toggle;
+		c11: port alt_controller.rotation -> rotation;
+	end controller.with_threads;
+
+	-- ---------------- Read altitude thread
+	thread read_altitude
+		features
+			alt_in: in data port data_types::mov_data;
+			alt_out: out data port data_types::mov_data;
+	end read_altitude;
+	
+	-- ----------------- Thread implementation
 	thread implementation read_altitude.impl
 		calls
 			MyCalls: {
@@ -272,76 +214,142 @@ end controller.with_threads;
 			c1: parameter read_alt_spg.alt_out -> alt_out;
 		properties
 			Priority => 2;
+			Dispatch_Protocol => Periodic;
 			Compute_Execution_Time => 30ms .. 30ms;
 			Deadline => 200ms;
 			Period => 200ms;
 	end read_altitude.impl;
+
+	-- ----------------- Subprogram
+	subprogram read_altitude_spg
+		features
+			alt_in: in parameter data_types::mov_data;
+			alt_out: out parameter data_types::mov_data;
+			
+		properties
+			source_language => (Ada95);
+			source_name => "satellite.read_altitude";
+	end read_altitude_spg;
 	
+	-- ------------------ Altitude control thread
+	thread altitude_controll
+		features
+			alt_in: in data port data_types::mov_data;
+			engine_1_control: out data port data_types::toggle_data;
+			engine_2_control: out data port data_types::toggle_data;
+			engine_3_control: out data port data_types::toggle_data;
+			engine_4_control: out data port data_types::toggle_data;
+			engine_5_control: out data port data_types::toggle_data;
+			engine_6_control: out data port data_types::toggle_data;
+			rotation: out data port data_types::mov_data;
+			toggle_manual_control: in data port data_types::toggle_data;
+			manual_controls: in data port data_types::Satellite_controls.impl;
+	end altitude_controll;
+	
+	-- ---------------- Thread implementation
 	thread implementation altitude_controll.impl
 		calls
 			MyCalls: {
 				alt_controll_spg: subprogram alt_controll_spg;
 			};
+			
 		connections
 			c0: parameter alt_in -> alt_controll_spg.alt_in;
 			c1: parameter toggle_manual_control -> alt_controll_spg.toggle_manual_control;
-			c2: parameter manual_controls.xLocation -> alt_controll_spg.xLocation;
-			c3: parameter manual_controls.yLocation -> alt_controll_spg.yLocation;
-			c4: parameter manual_controls.zLocation -> alt_controll_spg.zLocation;
-			c5: parameter manual_controls.xRotation -> alt_controll_spg.xRotation;
-			c6: parameter manual_controls.yRotation -> alt_controll_spg.yRotation;
-			c7: parameter manual_controls.zRotation -> alt_controll_spg.zRotation;
+			c2: parameter manual_controls -> alt_controll_spg.manual_controls;
 			
-			c8: parameter alt_controll_spg.eng1Out -> engine_1_control; 
-			c9: parameter alt_controll_spg.eng2Out -> engine_2_control;
-			c10: parameter alt_controll_spg.eng3Out -> engine_3_control;
-			c11: parameter alt_controll_spg.eng4Out -> engine_4_control;
-			c12: parameter alt_controll_spg.eng5Out -> engine_5_control;
-			c13: parameter alt_controll_spg.eng6Out -> engine_6_control;
-			c14: parameter alt_controll_spg.rotation -> rotation;
+			c3: parameter alt_controll_spg.eng1Out -> engine_1_control; 
+			c4: parameter alt_controll_spg.eng2Out -> engine_2_control;
+			c5: parameter alt_controll_spg.eng3Out -> engine_3_control;
+			c6: parameter alt_controll_spg.eng4Out -> engine_4_control;
+			c7: parameter alt_controll_spg.eng5Out -> engine_5_control;
+			c8: parameter alt_controll_spg.eng6Out -> engine_6_control;
+			c9: parameter alt_controll_spg.rotation -> rotation;
+			
 		properties
 			Priority => 1;
 			Compute_Execution_Time => 100ms .. 100ms;
+			Dispatch_Protocol => Periodic;
 			Deadline => 200ms;
 			Period => 200ms;
 	end altitude_controll.impl;
 	
+	-- ------------ Subprogram
+	subprogram alt_controll_spg
+		features
+			alt_in: in parameter data_types::mov_data;
+			toggle_manual_control: in parameter data_types::toggle_data;
+			manual_controls: in parameter data_types::Satellite_controls.impl;
+			
+			eng1Out: out parameter data_types::toggle_data;
+			eng2Out: out parameter data_types::toggle_data;
+			eng3Out: out parameter data_types::toggle_data;
+			eng4Out: out parameter data_types::toggle_data;
+			eng5Out: out parameter data_types::toggle_data;
+			eng6Out: out parameter data_types::toggle_data;
+			rotation: out parameter data_types::mov_data;
+			
+		properties
+			source_language => (Ada95);
+			source_name => "satellite.altitude_controll";
+	end alt_controll_spg;
+
+	-- ========================== Devices
+	
 	device altitude_sensor
 		features
-			alt_out: out data port mov_data;
+			alt_out: out data port data_types::mov_data;
 			VME: REQUIRES BUS ACCESS VME;
+		properties
+			Compute_Execution_Time => 1ms .. 2ms;
+			Deadline => 1ms;
+			Period => 1ms;
 	end altitude_sensor;
 	
 	device correction_engine
 		features
-			toggle: in data port toggle_data;
+			toggle: in data port data_types::toggle_data;
+			VME: REQUIRES BUS ACCESS VME;
+		properties
+			Compute_Execution_Time => 4ms .. 4ms;
+			Deadline => 10ms;
+			Period => 10ms;
 	end correction_engine;
 	
 	device camera
 		features
---			take_photo: in event port;
-			photo_out: out data port photo_data;
+			take_photo: in event port;
+			photo_out: out data port data_types::photo_data;
 			VME: REQUIRES BUS ACCESS VME;
+		properties
+			Compute_Execution_Time => 60ms .. 80ms;
+			Deadline => 100ms;
+			Period => 100ms;
 	end camera;
 	
 	device communication_unit
 		features
-			toggle_manual_control: out data port toggle_data;
-			manual_controls: FEATURE GROUP satelliteControl;
+			toggle_manual_control: out data port data_types::toggle_data;
+			manual_controls: out data port data_types::Satellite_controls.impl;
 			VME: REQUIRES BUS ACCESS VME;
+		properties
+			Compute_Execution_Time => 10ms .. 20ms;
+			Deadline => 1000ms;
+			Period => 1000ms;
 	end communication_unit;
 	
 
 	device camera_communication
 		features
---			take_photo_signal: out event port;
-			photo_in: in data port photo_data;
+			take_photo_signal: out event port;
+			photo_in: in data port data_types::photo_data;
 			VME: REQUIRES BUS ACCESS VME;
 	end camera_communication;
 	
 	device gyroscope
 		features
-			rotation: in data port mov_data;
+			rotation: in data port data_types::mov_data;
+			VME: REQUIRES BUS ACCESS VME;
 	end gyroscope;
 	
 	PROCESSOR CPU

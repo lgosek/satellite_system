@@ -1,0 +1,74 @@
+V "GNAT Lib v7"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+
+U polyorb_hi_generated.subprograms%b  polyorb_hi_generated-subprograms.adb  2382d703 NE OO PK IL
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W satellite%s		satellite.adb		satellite.ali
+
+U polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  a34e9218 EE NE OO PK IL
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20200618150231 dc8ef2c9 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-subprograms.ads  20200618150231 e93de98f polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-subprograms.adb  20200618150231 d939a4a4 polyorb_hi_generated.subprograms%b
+D polyorb_hi_generated-types.ads  20200618150851 78d15600 polyorb_hi_generated.types%s
+D satellite.ads		20200618150443 13869a28 satellite%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 3|9r6 11r9 14r14 15r19 18r14 19r29 20r23
+. 21r19 22r19 23r19 24r19 25r19 26r19 27r20 29r5 4|11r14 14r14 15r19 19r14
+. 20r29 21r23 22r19 23r19 24r19 25r19 26r19 27r19 28r20 31r5
+X 3 polyorb_hi_generated-subprograms.ads
+11K30*Subprograms 1|34k9 3|29l26 29e37 4|11b35 31l26 31t37
+13U13*satellite_sys_read_altitude_spg 14>5 15<5 4|13b13
+14i5 alt_in{5|12I8} 4|14b5
+15i5 alt_out{5|12I8} 4|15b5
+17U13*satellite_sys_alt_controll_spg 18>5 19>5 20>5 21<5 22<5 23<5 24<5 25<5
+. 26<5 27<5 4|18b13
+18i5 alt_in{5|12I8} 4|19b5
+19b5 toggle_manual_control{5|28E8} 4|20b5
+20r5 manual_controls{5|36R8} 4|21b5
+21b5 eng1Out{5|28E8} 4|22b5
+22b5 eng2Out{5|28E8} 4|23b5
+23b5 eng3Out{5|28E8} 4|24b5
+24b5 eng4Out{5|28E8} 4|25b5
+25b5 eng5Out{5|28E8} 4|26b5
+26b5 eng6Out{5|28E8} 4|27b5
+27i5 rotation{5|12I8} 4|28b5
+X 5 polyorb_hi_generated-types.ads
+10K30*Types 3|9w27 14r35 15r40 18r35 19r50 20r44 21r40 22r40 23r40 24r40
+. 25r40 26r40 27r41 4|14r35 15r40 19r35 20r50 21r44 22r40 23r40 24r40 25r40
+. 26r40 27r40 28r41 5|58e31
+12I8*mov_data<integer> 3|14r41 15r46 18r41 27r47 4|14r41 15r46 19r41 28r47
+28B8*toggle_data<boolean> 3|19r56 21r46 22r46 23r46 24r46 25r46 26r46 4|20r56
+. 22r46 23r46 24r46 25r46 26r46 27r46
+36R8*Satellite_Controls_impl 3|20r50 4|21r50 5|44e15
+X 6 satellite.ads
+35K9*Satellite 4|9w6 16r12 29r12 6|62e14
+46U14*read_altitude 4|16r22
+50U14*altitude_controll 4|29r22
+

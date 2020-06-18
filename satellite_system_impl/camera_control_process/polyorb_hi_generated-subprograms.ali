@@ -1,0 +1,57 @@
+V "GNAT Lib v7"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+
+U polyorb_hi_generated.subprograms%b  polyorb_hi_generated-subprograms.adb  5e6d8b35 NE OO PK IL
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W satellite%s		satellite.adb		satellite.ali
+
+U polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  8241efa4 EE NE OO PK IL
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20200618150231 8645c9fc polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-subprograms.ads  20200618150231 c8329433 polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-subprograms.adb  20200618150231 85d9852e polyorb_hi_generated.subprograms%b
+D polyorb_hi_generated-types.ads  20200618151238 78d15600 polyorb_hi_generated.types%s
+D satellite.ads		20200618151101 13869a28 satellite%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 3|9r6 11r9 14r16 15r21 19r5 4|11r14 14r16
+. 15r21 21r5
+X 3 polyorb_hi_generated-subprograms.ads
+11K30*Subprograms 1|34k9 3|19l26 19e37 4|11b35 21l26 21t37
+13U13*satellite_sys_send_photo_spg 14>5 15<5 4|13b13
+14i5 photo_in{5|21I8} 4|14b5
+15i5 photo_out{5|21I8} 4|15b5
+17U13*satellite_sys_get_photo_spg 4|18b13
+X 5 polyorb_hi_generated-types.ads
+10K30*Types 3|9w27 14r37 15r42 4|14r37 15r42 5|59e31
+21I8*photo_data<integer> 3|14r43 15r48 4|14r43 15r48
+X 6 satellite.ads
+35K9*Satellite 4|9w6 16r12 19r12 6|62e14
+40U14*send_photo 4|16r22
+44U14*Get_Photo 4|19r22
+

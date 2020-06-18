@@ -1,0 +1,84 @@
+V "GNAT Lib v7"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P ZX
+
+RN
+RR NO_ALLOCATORS
+RR NO_DISPATCH
+RR NO_IO
+RR NO_RECURSION
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  b4e7e46b NE OO PR PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20200618150231 8645c9fc polyorb_hi_generated.deployment%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 38e25 2|10r9 169r12 195r5
+X 2 polyorb_hi_generated-deployment.ads
+10K30*Deployment 1|34k9 2|169r33 195l26 195e36
+16E8*Node_Type 17e30 21r7 27r7 37r4 37r20 37r39 55r22 83r9
+17n5*camera_control_process_K{16E8} 22r5 52r7 56r4 88r8 90r8
+29i3*Max_Node_Image_Size{integer} 40r23
+36E11*UT_Deployment_Camera_Control_Process_Node_Type_Range{16E8} 47r11
+39I11*UT_Deployment_Camera_Control_Process_1_Max_Node_Image_Size{integer}
+. 44r7
+42A11*UT_Deployment_Camera_Control_Process_Node_Image_Component{string}<integer>
+. 48r9
+46A8*UT_Deployment_Camera_Control_Process_Node_Image_Array(42A11)<16E8> 50r25
+. 51r4
+50a3*Node_Image{46A8}
+55e3*My_Node{16E8}
+60E8*Entity_Type 62e44 66r7 74r7 79r4 79r22 79r43 149r9
+61n5*camera_control_process_photo_send_K{60E8} 67r5 87r7 112r7 154r8 156r8
+62n5*camera_control_process_photo_trigger_K{60E8} 69r5 89r7 114r7 158r8 160r8
+78E11*UT_Deployment_Camera_Control_Process_Entity_Type_Range{60E8} 82r11
+. 107r11
+81A8*UT_Deployment_Camera_Control_Process_Entity_Table_Array(16E8)<60E8>
+. 85r27 86r4
+85a3*Entity_Table{81A8}
+92i3*Max_Entity_Image_Size{integer} 100r23
+99I11*UT_Deployment_Camera_Control_Process_1_Max_Entity_Image_Size{integer}
+. 104r7
+102A11*UT_Deployment_Camera_Control_Process_Entity_Image_Component{string}<integer>
+. 108r9
+106A8*UT_Deployment_Camera_Control_Process_Entity_Image_Array(102A11)<60E8>
+. 110r27 111r4
+110a3*Entity_Image{106A8}
+120E8*Port_Type 124e62 128r7 140r7 145r4 145r20 145r39
+121n5*camera_control_process_photo_send_photo_in_K{120E8} 129r5 153r7 179r7
+122n5*camera_control_process_photo_send_photo_out_K{120E8} 131r5 155r7 181r7
+123n5*camera_control_process_photo_trigger_photo_trigger_in_K{120E8} 133r5
+. 157r7 183r7
+124n5*camera_control_process_photo_trigger_photo_trigger_out_K{120E8} 135r5
+. 159r7 185r7
+144E11*UT_Deployment_Camera_Control_Process_Port_Type_Range{120E8} 148r11
+. 174r11
+147A8*UT_Deployment_Camera_Control_Process_Port_Table_Array(60E8)<120E8>
+. 151r25 152r4
+151a3*Port_Table{147A8}
+162i3*Max_Port_Image_Size{integer} 169r44
+167A11*Port_Sized_String{string}<integer> 175r9
+173A8*UT_Deployment_Camera_Control_Process_Port_Image_Array(167A11)<120E8>
+. 177r25 178r4
+177a3*Port_Image{173A8}
+190i3*Max_Payload_Size{integer}
+

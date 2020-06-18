@@ -1,0 +1,40 @@
+package data_types
+public
+	with data_model;
+	
+	DATA toggle_data
+		properties
+			Data_Model::Data_Representation => boolean;
+	end toggle_data;
+	
+	DATA mov_data
+		properties
+			Data_Model::Data_Representation => integer;
+	end mov_data;
+	
+	DATA photo_data
+		properties
+			Data_Model::Data_Representation => integer;
+	end photo_data;
+	
+	Data Satellite_Controls
+	end Satellite_Controls;
+	
+	Data implementation Satellite_Controls.impl
+		subcomponents
+			xLocation: DATA mov_data;
+
+			yLocation: DATA mov_data;
+
+			zLocation: DATA mov_data;
+
+			xRotation: DATA mov_data;
+
+			yRotation: DATA mov_data;
+
+			zRotation: DATA mov_data;
+		Properties
+			Data_Model::Data_Representation => struct;	
+	end Satellite_Controls.impl;
+	
+end data_types;

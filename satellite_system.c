@@ -2,36 +2,44 @@
 #include <time.h>
 #include <po_hi_time.h>
 
-void read_altitude_spg(int* dataout, int datain){
+void read_altitude_spg(int datain, int* dataout){
 	dataout* = 100;
 }
 
-void send_photo_spg(int* dataout, int datain){
+void send_photo_spg(int datain, int* dataout){
 	dataout* = 2;
 }
 
-void altitude_controll_spg(bool* eng1out, bool* eng2out, bool* eng3out, bool* eng4out, bool* eng5out, bool* eng6out, int* rot, 
-				int xloc, int yloc, int zloc, int xrot, int yrot, int zrot){
+void altitude_controll_spg(int alt_in, bool toggle, struct controls, bool* engine1, bool* engine2, bool* engine3, bool* engine4, bool* engine5, int* rotation){
 	if(xloc){
-		eng1out* = True;
-		eng2out* = False;
+		engine1* = True;
+		engine2* = False;
 	}else{
-		eng1out* = False;
-		eng2out* = True;
+		engine1* = False;
+		engine2* = True;
 	}
 	if(yloc){
-		eng3out* = True;
-		eng4out* = False;
+		engine3* = True;
+		engine4* = False;
 	}else{
-		eng3out* = False;
-		eng4out* = True;
+		engine3* = False;
+		engine4* = True;
 	}
 	if(zloc){
-		eng5out* = True;
-		eng6out* = False;
+		engine5* = True;
+		engine6* = False;
 	}else{
-		eng5out* = False;
-		eng6out* = True;
+		engine5* = False;
+		engine6* = True;
 	}
-	rot*=0;
+	rotation*=0;
+}
+
+struct controls{
+	int xLocation;
+	int yLocation;
+	int zLocation;
+	int xRotation;
+	int yRotation;
+	int zRotation;
 }
