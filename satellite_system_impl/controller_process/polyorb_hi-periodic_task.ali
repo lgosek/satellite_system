@@ -32,7 +32,7 @@ W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
 W polyorb_hi.output%s	polyorb_hi-output.adb	polyorb_hi-output.ali
 W polyorb_hi.suspenders%s  polyorb_hi-suspenders.adb  polyorb_hi-suspenders.ali  EA
 
-U polyorb_hi.periodic_task%s  polyorb_hi-periodic_task.ads  31f92bc1 BN EE NE OO PK GE
+U polyorb_hi.periodic_task%s  polyorb_hi-periodic_task.ads  7c4228a9 BN EE NE OO PK GE
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
@@ -55,7 +55,7 @@ D polyorb_hi-periodic_task.adb  20170204221544 94a22a7a polyorb_hi.periodic_task
 D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
 D polyorb_hi-suspenders.ads  20170204221544 eb2f55ee polyorb_hi.suspenders%s
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200618150231 dc8ef2c9 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-deployment.ads  20200621221226 9135f1a1 polyorb_hi_generated.deployment%s
 D system.ads		20170510173650 4635ec04 system%s
 D s-atacco.ads		20120515093410 4c36d12f system.address_to_access_conversions%s
 D s-exctab.ads		20140225151139 54135002 system.exception_table%s
@@ -124,11 +124,11 @@ X 13 polyorb_hi-suspenders.ads
 X 14 polyorb_hi_generated.ads
 34K9*PolyORB_HI_Generated 10|37r6 40r25 11|45r8 14|38e25
 X 15 polyorb_hi_generated-deployment.ads
-10K30*Deployment 10|37w27 40r46 11|45r29 15|251e36
-60E8*Entity_Type 10|40r57 15|62e41
-102A11*UT_Deployment_Controller_Process_Entity_Image_Component{string}<integer>
-106A8*UT_Deployment_Controller_Process_Entity_Image_Array(102A11)<60E8>
-110a3*Entity_Image{106A8} 11|65r13 83r33 103r33
+10K30*Deployment 10|37w27 40r46 11|45r29 15|293e36
+60E8*Entity_Type 10|40r57 15|64e40
+112A11*UT_Deployment_Controller_Process_Entity_Image_Component{string}<integer>
+116A8*UT_Deployment_Controller_Process_Entity_Image_Array(112A11)<60E8>
+120a3*Entity_Image{116A8} 11|65r13 83r33 103r33
 X 16 system.ads
 37K9*System 10|34w6 53r25 16|156e11
 108I12*Any_Priority{integer} 10|53r32

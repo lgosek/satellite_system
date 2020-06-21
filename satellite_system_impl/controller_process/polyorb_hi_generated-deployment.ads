@@ -59,7 +59,9 @@ package PolyORB_HI_Generated.Deployment is
 
   type Entity_Type is
    (controller_process_alt_reader_K,
-    controller_process_alt_controller_K);
+    controller_process_alt_controller_K,
+    controller_process_photo_send_K,
+    controller_process_photo_trigger_K);
 
   --  Representation clause to have consistent positions for enumerators
 
@@ -67,7 +69,11 @@ package PolyORB_HI_Generated.Deployment is
    (controller_process_alt_reader_K =>
      1,
     controller_process_alt_controller_K =>
-     2);
+     2,
+    controller_process_photo_send_K =>
+     3,
+    controller_process_photo_trigger_K =>
+     4);
 
   --  Size of Entity_Type fixed to 8 bits
 
@@ -87,6 +93,10 @@ package PolyORB_HI_Generated.Deployment is
      (controller_process_alt_reader_K =>
        controller_process_K,
       controller_process_alt_controller_K =>
+       controller_process_K,
+      controller_process_photo_send_K =>
+       controller_process_K,
+      controller_process_photo_trigger_K =>
        controller_process_K);
 
   Max_Entity_Image_Size : constant Standard.Integer :=
@@ -112,7 +122,11 @@ package PolyORB_HI_Generated.Deployment is
      (controller_process_alt_reader_K =>
        "controller_process_alt_reader_K    ",
       controller_process_alt_controller_K =>
-       "controller_process_alt_controller_K");
+       "controller_process_alt_controller_K",
+      controller_process_photo_send_K =>
+       "controller_process_photo_send_K    ",
+      controller_process_photo_trigger_K =>
+       "controller_process_photo_trigger_K ");
 
   --  For each thread port in the distributed application nodes, add an 
   --  enumerator
@@ -129,7 +143,11 @@ package PolyORB_HI_Generated.Deployment is
     controller_process_alt_controller_engine_6_control_K,
     controller_process_alt_controller_rotation_K,
     controller_process_alt_controller_toggle_manual_control_K,
-    controller_process_alt_controller_manual_controls_K);
+    controller_process_alt_controller_manual_controls_K,
+    controller_process_photo_send_photo_in_K,
+    controller_process_photo_send_photo_out_K,
+    controller_process_photo_trigger_photo_trigger_in_K,
+    controller_process_photo_trigger_photo_trigger_out_K);
 
   --  Representation clause to have consistent positions for enumerators
 
@@ -157,7 +175,15 @@ package PolyORB_HI_Generated.Deployment is
     controller_process_alt_controller_toggle_manual_control_K =>
      11,
     controller_process_alt_controller_manual_controls_K =>
-     12);
+     12,
+    controller_process_photo_send_photo_in_K =>
+     13,
+    controller_process_photo_send_photo_out_K =>
+     14,
+    controller_process_photo_trigger_photo_trigger_in_K =>
+     15,
+    controller_process_photo_trigger_photo_trigger_out_K =>
+     16);
 
   --  Size of Port_Type fixed to 16 bits
 
@@ -197,7 +223,15 @@ package PolyORB_HI_Generated.Deployment is
       controller_process_alt_controller_toggle_manual_control_K =>
        controller_process_alt_controller_K,
       controller_process_alt_controller_manual_controls_K =>
-       controller_process_alt_controller_K);
+       controller_process_alt_controller_K,
+      controller_process_photo_send_photo_in_K =>
+       controller_process_photo_send_K,
+      controller_process_photo_send_photo_out_K =>
+       controller_process_photo_send_K,
+      controller_process_photo_trigger_photo_trigger_in_K =>
+       controller_process_photo_trigger_K,
+      controller_process_photo_trigger_photo_trigger_out_K =>
+       controller_process_photo_trigger_K);
 
   Max_Port_Image_Size : constant Standard.Integer :=
    57;
@@ -239,7 +273,15 @@ package PolyORB_HI_Generated.Deployment is
       controller_process_alt_controller_toggle_manual_control_K =>
        "controller_process_alt_controller_toggle_manual_control_K",
       controller_process_alt_controller_manual_controls_K =>
-       "controller_process_alt_controller_manual_controls_K      ");
+       "controller_process_alt_controller_manual_controls_K      ",
+      controller_process_photo_send_photo_in_K =>
+       "controller_process_photo_send_photo_in_K                 ",
+      controller_process_photo_send_photo_out_K =>
+       "controller_process_photo_send_photo_out_K                ",
+      controller_process_photo_trigger_photo_trigger_in_K =>
+       "controller_process_photo_trigger_photo_trigger_in_K      ",
+      controller_process_photo_trigger_photo_trigger_out_K =>
+       "controller_process_photo_trigger_photo_trigger_out_K     ");
 
   --  Maximal message payload size for this node (in bits)
 

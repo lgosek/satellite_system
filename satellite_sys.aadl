@@ -25,14 +25,14 @@ public
 		cpu2: PROCESSOR CPU;
 
 		controller_process: process controller.with_threads;
-		camera_control_process: process camera_controller.impl;
+--		camera_control_process: process camera_controller.impl;
 		
 		VME: BUS VME;
 		RAM: MEMORY RAM;
 
 	connections
-		c1: port cam.photo_out -> camera_control_process.cam_photo_in;
-		c2: port camera_control_process.cam_photo_out -> cam_comm.photo_in;
+		c1: port cam.photo_out -> controller_process.cam_photo_in;
+		c2: port controller_process.cam_photo_out -> cam_comm.photo_in;
 		c3: port alt_sensor.alt_out -> controller_process.alt_in;
 
 		c4: port comm_unit.toggle_manual_control -> controller_process.toggle_manual_control;
@@ -48,8 +48,8 @@ public
 --		comm_to_cam_conn: port cam_comm.take_photo_signal -> cam.take_photo;
 		c12: port controller_process.rotation -> gyro.rotation;
 		
-		c13: port cam_comm.take_photo_signal -> camera_control_process.cam_trigger_in;
-		c14: port camera_control_process.cam_trigger_out -> cam.take_photo;
+		c13: port cam_comm.take_photo_signal -> controller_process.cam_trigger_in;
+		c14: port controller_process.cam_trigger_out -> cam.take_photo;
 		
 		A1: BUS ACCESS VME -> cpu1.VME;
 		A2: BUS ACCESS VME -> cpu2.VME;
@@ -70,9 +70,9 @@ public
 		
 		properties
 			Actual_Processor_Binding => (reference (cpu1)) applies to controller_process;
-			Actual_Processor_Binding => (reference (cpu2)) applies to camera_control_process;
+--			Actual_Processor_Binding => (reference (cpu2)) applies to camera_control_process;
 			Actual_Memory_Binding => (reference (ram)) applies to controller_process;
-			Actual_Memory_Binding => (reference (ram)) applies to camera_control_process;
+--			Actual_Memory_Binding => (reference (ram)) applies to camera_control_process;
 end satellite_system.impl;
 	
 	
@@ -175,6 +175,11 @@ end satellite_system.impl;
 			engine_5_toggle: out data port data_types::toggle_data;
 			engine_6_toggle: out data port data_types::toggle_data;
 			rotation: out data port data_types::mov_data;
+			
+			cam_photo_in: in data port data_types::photo_data;
+			cam_photo_out: out data port data_types::photo_data;
+			cam_trigger_in: in event port;
+			cam_trigger_out: out event port;
 	end controller;
 	
 	-- -------------------- Controller implementation
@@ -182,6 +187,8 @@ end satellite_system.impl;
 	subcomponents
 		alt_reader: thread read_altitude.impl;
 		alt_controller: thread altitude_controll.impl;
+		photo_send: thread send_photo.impl;
+		photo_trigger: thread get_photo.impl;
 	connections
 		c1: port alt_in -> alt_reader.alt_in;
 		c2: port alt_reader.alt_out -> alt_controller.alt_in;
@@ -194,6 +201,11 @@ end satellite_system.impl;
 		c9: port alt_controller.engine_5_control -> engine_5_toggle;
 		c10: port alt_controller.engine_6_control -> engine_6_toggle;
 		c11: port alt_controller.rotation -> rotation;
+		
+		c12: port cam_trigger_in -> photo_trigger.photo_trigger_in;
+		c13: port photo_trigger.photo_trigger_out -> cam_trigger_out;
+		c14: port cam_photo_in -> photo_send.photo_in;
+		c15: port photo_send.photo_out -> cam_photo_out;
 	end controller.with_threads;
 
 	-- ---------------- Read altitude thread

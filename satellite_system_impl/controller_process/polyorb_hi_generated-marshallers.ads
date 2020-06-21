@@ -64,4 +64,36 @@ package PolyORB_HI_Generated.Marshallers is
    (Data : out PolyORB_HI_Generated.Types.Satellite_Controls_impl;
     Message : in out PolyORB_HI.Messages.Message_Type);
 
+  --  Marshallers for interface type of thread send_photo.impl
+
+  procedure Marshall
+   (Data : PolyORB_HI_Generated.Activity.satellite_sys_send_photo_impl_Interface;
+    Message : in out PolyORB_HI.Messages.Message_Type);
+
+  procedure Unmarshall
+   (Port : PolyORB_HI_Generated.Activity.satellite_sys_send_photo_impl_Port_Type;
+    Data : out PolyORB_HI_Generated.Activity.satellite_sys_send_photo_impl_Interface;
+    Message : in out PolyORB_HI.Messages.Message_Type);
+
+  --  Marshallers for DATA type photo_data
+
+  procedure Marshall
+   (Data : PolyORB_HI_Generated.Types.photo_data;
+    Message : in out PolyORB_HI.Messages.Message_Type);
+
+  procedure Unmarshall
+   (Data : out PolyORB_HI_Generated.Types.photo_data;
+    Message : in out PolyORB_HI.Messages.Message_Type);
+
+  --  Marshallers for interface type of thread get_photo.impl
+
+  procedure Marshall
+   (Data : PolyORB_HI_Generated.Activity.satellite_sys_get_photo_impl_Interface;
+    Message : in out PolyORB_HI.Messages.Message_Type);
+
+  procedure Unmarshall
+   (Port : PolyORB_HI_Generated.Activity.satellite_sys_get_photo_impl_Port_Type;
+    Data : out PolyORB_HI_Generated.Activity.satellite_sys_get_photo_impl_Interface;
+    Message : in out PolyORB_HI.Messages.Message_Type);
+
 end PolyORB_HI_Generated.Marshallers;

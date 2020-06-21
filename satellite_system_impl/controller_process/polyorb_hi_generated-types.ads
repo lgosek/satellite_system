@@ -17,14 +17,6 @@ package PolyORB_HI_Generated.Types is
   mov_data_Default_Value : constant mov_data :=
    0;
 
-  type photo_data is
-   new Standard.Integer;
-
-  --  mov_data'Object_Size ~= 32 bits
-
-  photo_data_Default_Value : constant photo_data :=
-   0;
-
   type toggle_data is
    new Standard.Boolean;
 
@@ -54,5 +46,13 @@ package PolyORB_HI_Generated.Types is
     xRotation => 0,
     yRotation => 0,
     zRotation => 0);
+
+  type photo_data is
+   new Standard.Integer;
+
+  --  photo_data'Object_Size ~= 32 bits
+
+  photo_data_Default_Value : constant photo_data :=
+   0;
 
 end PolyORB_HI_Generated.Types;

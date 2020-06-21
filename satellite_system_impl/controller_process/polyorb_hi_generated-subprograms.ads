@@ -26,4 +26,10 @@ package PolyORB_HI_Generated.Subprograms is
     eng6Out : out PolyORB_HI_Generated.Types.toggle_data;
     rotation : out PolyORB_HI_Generated.Types.mov_data);
 
+  procedure satellite_sys_send_photo_spg
+   (photo_in : PolyORB_HI_Generated.Types.photo_data;
+    photo_out : out PolyORB_HI_Generated.Types.photo_data);
+
+  procedure satellite_sys_get_photo_spg;
+
 end PolyORB_HI_Generated.Subprograms;

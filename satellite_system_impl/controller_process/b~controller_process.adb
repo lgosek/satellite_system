@@ -298,32 +298,32 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-streams.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-deployment.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-utils.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-messages.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-errors.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-marshallers_g.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-output_low_level_native.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-port_kinds.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-port_type_marshallers.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-suspenders.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-output.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-periodic_task.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-time_marshallers.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-unprotected_queue.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi-thread_interrogators.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-types.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/satellite.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-subprograms.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-marshallers.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-transport.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-activity.o
-   --   /home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/controller_process.o
-   --   -L/home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/
-   --   -L/home/kp/Dokumenty/rzecz/satellite_system/satellite_system_impl/controller_process/
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-streams.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-deployment.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-utils.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-messages.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-errors.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-marshallers_g.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-output_low_level_native.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-port_kinds.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-port_type_marshallers.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-suspenders.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-output.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-periodic_task.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-time_marshallers.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-unprotected_queue.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi-thread_interrogators.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-types.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/satellite.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-subprograms.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-marshallers.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-transport.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/polyorb_hi_generated-activity.o
+   --   /home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/controller_process.o
+   --   -L/home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/
+   --   -L/home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/satellite_system_impl/controller_process/
    --   -L/usr/lib/gcc/x86_64-linux-gnu/7/adalib/
    --   -shared
    --   -lgnarl-7

@@ -27,6 +27,16 @@ package body PolyORB_HI_Generated.Transport is
     From : PolyORB_HI_Generated.Deployment.Entity_Type;
     Msg : in out PolyORB_HI.Messages.Message_Type);
 
+  procedure satellite_sys_photo_send_Deliver
+   (Port : PolyORB_HI_Generated.Deployment.Port_Type;
+    From : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Msg : in out PolyORB_HI.Messages.Message_Type);
+
+  procedure satellite_sys_photo_trigger_Deliver
+   (Port : PolyORB_HI_Generated.Deployment.Port_Type;
+    From : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Msg : in out PolyORB_HI.Messages.Message_Type);
+
   -------------
   -- Deliver -- 
   -------------
@@ -68,6 +78,22 @@ package body PolyORB_HI_Generated.Transport is
         PolyORB_HI.Messages.Sender
          (Message),
         Msg);
+    elsif (Entity
+      = PolyORB_HI_Generated.Deployment.controller_process_photo_send_K)
+    then
+      satellite_sys_photo_send_Deliver
+       (Port,
+        PolyORB_HI.Messages.Sender
+         (Message),
+        Msg);
+    elsif (Entity
+      = PolyORB_HI_Generated.Deployment.controller_process_photo_trigger_K)
+    then
+      satellite_sys_photo_trigger_Deliver
+       (Port,
+        PolyORB_HI.Messages.Sender
+         (Message),
+        Msg);
     end if;
   end Deliver;
 
@@ -77,6 +103,16 @@ package body PolyORB_HI_Generated.Transport is
    return PolyORB_HI.Errors.Error_Kind;
 
   function satellite_sys_alt_controller_Send
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Message : PolyORB_HI.Streams.Stream_Element_Array)
+   return PolyORB_HI.Errors.Error_Kind;
+
+  function satellite_sys_photo_send_Send
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Message : PolyORB_HI.Streams.Stream_Element_Array)
+   return PolyORB_HI.Errors.Error_Kind;
+
+  function satellite_sys_photo_trigger_Send
    (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
     Message : PolyORB_HI.Streams.Stream_Element_Array)
    return PolyORB_HI.Errors.Error_Kind;
@@ -108,6 +144,18 @@ package body PolyORB_HI_Generated.Transport is
       = PolyORB_HI_Generated.Deployment.controller_process_alt_controller_K)
     then
       return satellite_sys_alt_controller_Send
+       (Entity,
+        Msg);
+    elsif (From
+      = PolyORB_HI_Generated.Deployment.controller_process_photo_send_K)
+    then
+      return satellite_sys_photo_send_Send
+       (Entity,
+        Msg);
+    elsif (From
+      = PolyORB_HI_Generated.Deployment.controller_process_photo_trigger_K)
+    then
+      return satellite_sys_photo_trigger_Send
        (Entity,
         Msg);
     else
@@ -265,5 +313,104 @@ package body PolyORB_HI_Generated.Transport is
     return PolyORB_HI.Errors.Error_Kind'
      (PolyORB_HI.Errors.Error_Transport);
   end satellite_sys_alt_controller_Send;
+
+  --------------------------------------
+  -- satellite_sys_photo_send_Deliver -- 
+  --------------------------------------
+
+  procedure satellite_sys_photo_send_Deliver
+   (Port : PolyORB_HI_Generated.Deployment.Port_Type;
+    From : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Msg : in out PolyORB_HI.Messages.Message_Type)
+  is
+    use PolyORB_HI_Generated.Deployment;
+    Thread_Interface_Ü : satellite_sys_send_photo_impl_Interface;
+    Time_Stamp_Ü : Ada.Real_Time.Time;
+  begin
+    if (Port
+      = PolyORB_HI_Generated.Deployment.controller_process_photo_send_photo_in_K)
+    then
+      PolyORB_HI.Time_Marshallers.Unmarshall
+       (Time_Stamp_Ü,
+        Msg);
+      PolyORB_HI_Generated.Marshallers.Unmarshall
+       (photo_in,
+        Thread_Interface_Ü,
+        Msg);
+      PolyORB_HI_Generated.Activity.Store_Received_Message
+       (PolyORB_HI_Generated.Deployment.controller_process_photo_send_K,
+        Thread_Interface_Ü,
+        From,
+        Time_Stamp_Ü);
+    end if;
+  end satellite_sys_photo_send_Deliver;
+
+  -----------------------------------
+  -- satellite_sys_photo_send_Send -- 
+  -----------------------------------
+
+  function satellite_sys_photo_send_Send
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Message : PolyORB_HI.Streams.Stream_Element_Array)
+   return PolyORB_HI.Errors.Error_Kind
+  is
+    pragma Warnings
+     (Off,
+      Message);
+    pragma Warnings
+     (Off,
+      Entity);
+  begin
+    --  Device
+    return PolyORB_HI.Errors.Error_Kind'
+     (PolyORB_HI.Errors.Error_Transport);
+  end satellite_sys_photo_send_Send;
+
+  -----------------------------------------
+  -- satellite_sys_photo_trigger_Deliver -- 
+  -----------------------------------------
+
+  procedure satellite_sys_photo_trigger_Deliver
+   (Port : PolyORB_HI_Generated.Deployment.Port_Type;
+    From : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Msg : in out PolyORB_HI.Messages.Message_Type)
+  is
+    use PolyORB_HI_Generated.Deployment;
+    Thread_Interface_Ü : satellite_sys_get_photo_impl_Interface;
+  begin
+    if (Port
+      = PolyORB_HI_Generated.Deployment.controller_process_photo_trigger_photo_trigger_in_K)
+    then
+      PolyORB_HI_Generated.Marshallers.Unmarshall
+       (photo_trigger_in,
+        Thread_Interface_Ü,
+        Msg);
+      PolyORB_HI_Generated.Activity.Store_Received_Message
+       (PolyORB_HI_Generated.Deployment.controller_process_photo_trigger_K,
+        Thread_Interface_Ü,
+        From);
+    end if;
+  end satellite_sys_photo_trigger_Deliver;
+
+  --------------------------------------
+  -- satellite_sys_photo_trigger_Send -- 
+  --------------------------------------
+
+  function satellite_sys_photo_trigger_Send
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Message : PolyORB_HI.Streams.Stream_Element_Array)
+   return PolyORB_HI.Errors.Error_Kind
+  is
+    pragma Warnings
+     (Off,
+      Message);
+    pragma Warnings
+     (Off,
+      Entity);
+  begin
+    --  Device
+    return PolyORB_HI.Errors.Error_Kind'
+     (PolyORB_HI.Errors.Error_Transport);
+  end satellite_sys_photo_trigger_Send;
 
 end PolyORB_HI_Generated.Transport;

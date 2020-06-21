@@ -37,11 +37,14 @@ package Satellite is
    use PolyORB_HI_Generated.Deployment;
    use PolyORB_HI_Generated.Types;
 
-   procedure send_photo
+   
+
+   procedure get_Photo;
+
+
+procedure send_photo
      (photo_in : photo_data;
       photo_out : out photo_data);
-
-   procedure Get_Photo;
 
    procedure read_altitude
      (alt_in : mov_data;

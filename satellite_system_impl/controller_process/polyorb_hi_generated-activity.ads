@@ -214,4 +214,178 @@ package PolyORB_HI_Generated.Activity is
       Task_Stack_Size => 100000,
       Job => satellite_sys_alt_controller_Job);
 
+  --  BEGIN: Entities used by all instances of component send_photo.impl
+
+  type satellite_sys_send_photo_impl_Port_Type is
+   (photo_in,
+    photo_out);
+
+  type satellite_sys_send_photo_impl_Interface 
+   (Port : satellite_sys_send_photo_impl_Port_Type := satellite_sys_send_photo_impl_Port_Type'First)
+  is
+    record
+      case Port is
+        when photo_in =>
+          photo_in_DATA : PolyORB_HI_Generated.Types.photo_data;
+        when photo_out =>
+          photo_out_DATA : PolyORB_HI_Generated.Types.photo_data;
+        pragma Warnings (Off);
+        when others =>
+          null;
+        pragma Warnings (On);
+      end case;
+    end record;
+
+  function Send_Output
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_send_photo_impl_Port_Type)
+   return PolyORB_HI.Errors.Error_Kind;
+
+  procedure Put_Value
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Thread_Interface : satellite_sys_send_photo_impl_Interface);
+
+  procedure Receive_Input
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_send_photo_impl_Port_Type);
+
+  function Get_Value
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_send_photo_impl_Port_Type)
+   return satellite_sys_send_photo_impl_Interface;
+
+  function Get_Sender
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_send_photo_impl_Port_Type)
+   return PolyORB_HI_Generated.Deployment.Entity_Type;
+
+  function Get_Count
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_send_photo_impl_Port_Type)
+   return Standard.Integer;
+
+  function Get_Time_Stamp
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_send_photo_impl_Port_Type)
+   return Ada.Real_Time.Time;
+
+  procedure Next_Value
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_send_photo_impl_Port_Type);
+
+  procedure Store_Received_Message
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Thread_Interface : satellite_sys_send_photo_impl_Interface;
+    From : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Time_Stamp : Ada.Real_Time.Time :=
+      Ada.Real_Time.Clock);
+
+  procedure Wait_For_Incoming_Events
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : out satellite_sys_send_photo_impl_Port_Type);
+
+  --  END: Entities used by all instances of component send_photo.impl
+
+  --  Periodic task : photo_send
+
+  function satellite_sys_photo_send_Job return PolyORB_HI.Errors.Error_Kind;
+
+  package satellite_sys_photo_send_Task is
+   new PolyORB_HI.Periodic_Task
+     (Entity => PolyORB_HI_Generated.Deployment.controller_process_photo_send_K,
+      Task_Period => Ada.Real_Time.Milliseconds
+       (300),
+      Task_Deadline => Ada.Real_Time.Milliseconds
+       (300),
+      Task_Priority => 10,
+      Task_Stack_Size => 100000,
+      Job => satellite_sys_photo_send_Job);
+
+  --  BEGIN: Entities used by all instances of component get_photo.impl
+
+  type satellite_sys_get_photo_impl_Port_Type is
+   (photo_trigger_in,
+    photo_trigger_out);
+
+  type satellite_sys_get_photo_impl_Interface 
+   (Port : satellite_sys_get_photo_impl_Port_Type := satellite_sys_get_photo_impl_Port_Type'First)
+  is
+    record
+      case Port is
+        when photo_trigger_in =>
+          null;
+        when photo_trigger_out =>
+          null;
+        pragma Warnings (Off);
+        when others =>
+          null;
+        pragma Warnings (On);
+      end case;
+    end record;
+
+  function Send_Output
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_get_photo_impl_Port_Type)
+   return PolyORB_HI.Errors.Error_Kind;
+
+  procedure Put_Value
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Thread_Interface : satellite_sys_get_photo_impl_Interface);
+
+  procedure Receive_Input
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_get_photo_impl_Port_Type);
+
+  function Get_Value
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_get_photo_impl_Port_Type)
+   return satellite_sys_get_photo_impl_Interface;
+
+  function Get_Sender
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_get_photo_impl_Port_Type)
+   return PolyORB_HI_Generated.Deployment.Entity_Type;
+
+  function Get_Count
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_get_photo_impl_Port_Type)
+   return Standard.Integer;
+
+  function Get_Time_Stamp
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_get_photo_impl_Port_Type)
+   return Ada.Real_Time.Time;
+
+  procedure Next_Value
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : satellite_sys_get_photo_impl_Port_Type);
+
+  procedure Store_Received_Message
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Thread_Interface : satellite_sys_get_photo_impl_Interface;
+    From : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Time_Stamp : Ada.Real_Time.Time :=
+      Ada.Real_Time.Clock);
+
+  procedure Wait_For_Incoming_Events
+   (Entity : PolyORB_HI_Generated.Deployment.Entity_Type;
+    Port : out satellite_sys_get_photo_impl_Port_Type);
+
+  --  END: Entities used by all instances of component get_photo.impl
+
+  --  Periodic task : photo_trigger
+
+  function satellite_sys_photo_trigger_Job return PolyORB_HI.Errors.Error_Kind;
+
+  package satellite_sys_photo_trigger_Task is
+   new PolyORB_HI.Periodic_Task
+     (Entity => PolyORB_HI_Generated.Deployment.controller_process_photo_trigger_K,
+      Task_Period => Ada.Real_Time.Milliseconds
+       (300),
+      Task_Deadline => Ada.Real_Time.Milliseconds
+       (300),
+      Task_Priority => 5,
+      Task_Stack_Size => 100000,
+      Job => satellite_sys_photo_trigger_Job);
+
 end PolyORB_HI_Generated.Activity;
