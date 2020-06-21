@@ -9,15 +9,6 @@ pragma Style_Checks
 
 package PolyORB_HI_Generated.Types is
 
-  type mov_data is
-   new Standard.Integer;
-
-  --  mov_data'Object_Size ~= 32 bits
-
-  mov_data_Default_Value : constant mov_data :=
-   0;
-
-
   type photo_data is
    new Standard.Integer;
 
@@ -25,35 +16,5 @@ package PolyORB_HI_Generated.Types is
 
   photo_data_Default_Value : constant photo_data :=
    0;
-
- type toggle_data is
-   new Standard.Boolean;
-
-  --  toggle_data'Object_Size ~= 8 bits
-
-  toggle_data_Default_Value : constant toggle_data :=
-   False;
-
-  type Satellite_Controls_impl is
-    record
-      xLocation : PolyORB_HI_Generated.Types.mov_data;
-      yLocation : PolyORB_HI_Generated.Types.mov_data;
-      zLocation : PolyORB_HI_Generated.Types.mov_data;
-      xRotation : PolyORB_HI_Generated.Types.mov_data;
-      yRotation : PolyORB_HI_Generated.Types.mov_data;
-      zRotation : PolyORB_HI_Generated.Types.mov_data;
-    end record;
-
-  --  satellite_controls_impl'Object_Size ~= 192 bits
-
-  for Satellite_Controls_impl'Alignment use 8;
-
-  Satellite_Controls_impl_Default_Value : constant Satellite_Controls_impl :=
-   (xLocation => 0,
-    yLocation => 0,
-    zLocation => 0,
-    xRotation => 0,
-    yRotation => 0,
-    zRotation => 0);
 
 end PolyORB_HI_Generated.Types;

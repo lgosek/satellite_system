@@ -1,0 +1,4 @@
+polyorb_hi_generated-marshallers.adb:183:03: warning: in instantiation at polyorb_hi-marshallers_g.adb:44
+polyorb_hi_generated-marshallers.adb:183:03: warning: types for unchecked conversion have different sizes
+polyorb_hi_generated-marshallers.adb:183:03: warning: in instantiation at polyorb_hi-marshallers_g.adb:46
+polyorb_hi_generated-marshallers.adb:183:03: warning: types for unchecked conversion have different sizes

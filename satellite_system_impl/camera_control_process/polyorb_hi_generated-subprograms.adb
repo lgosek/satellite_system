@@ -6,16 +6,16 @@
 pragma Style_Checks
  ("NM32766");
 
-with satellite;
+with photo;
 
 package body PolyORB_HI_Generated.Subprograms is
 
   procedure satellite_sys_send_photo_spg
    (photo_in : PolyORB_HI_Generated.Types.photo_data;
     photo_out : out PolyORB_HI_Generated.Types.photo_data)
-   renames satellite.send_photo;
+   renames photo.send_photo;
 
   procedure satellite_sys_get_photo_spg
-   renames satellite.get_photo;
+   renames photo.get_photo;
 
 end PolyORB_HI_Generated.Subprograms;

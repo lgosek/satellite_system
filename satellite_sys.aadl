@@ -128,7 +128,7 @@ end satellite_system.impl;
 				
 			properties
 				source_language => (Ada95);
-				source_name => "satellite.send_photo";
+				source_name => "photo.send_photo";
 		end send_photo_spg;
 		
 	-- ------------------- Thread get_photo		
@@ -156,7 +156,7 @@ end satellite_system.impl;
 	subprogram get_photo_spg
 		properties
 			source_language => (Ada95);
-			source_name => "satellite.get_photo";
+			source_name => "photo.get_photo";
 	end get_photo_spg;
 	
 	
@@ -228,7 +228,7 @@ end satellite_system.impl;
 			
 		properties
 			source_language => (Ada95);
-			source_name => "satellite.read_altitude";
+			source_name => "move.read_altitude";
 	end read_altitude_spg;
 	
 	-- ------------------ Altitude control thread
@@ -291,7 +291,7 @@ end satellite_system.impl;
 			
 		properties
 			source_language => (Ada95);
-			source_name => "satellite.altitude_controll";
+			source_name => "move.altitude_controll";
 	end alt_controll_spg;
 
 	-- ========================== Devices

@@ -1,5 +1,6 @@
-V "GNAT Lib v7"
+V "GNAT Lib v9"
 A -O1
+A -gnatA
 A -g
 A -gnatwa
 A -gnatwG
@@ -7,7 +8,8 @@ A -gnat12
 A -g
 A -gnata
 A -gnato
-A -gnatA
+A -mtune=generic
+A -march=x86-64
 P ZX
 
 RN
@@ -21,31 +23,29 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_OBSOLESCENT_FEATURES
 RV SPARK_05
 
-U polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  4a737b97 NE OO PK
+U polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  5412936c NE OO PK
 W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
 
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-types.ads  20200618150851 78d15600 polyorb_hi_generated.types%s
-D system.ads		20170510173650 4635ec04 system%s
+D polyorb_hi_generated-types.ads  20200621220903 66b0befb polyorb_hi_generated.types%s
+D system.ads		20200312110721 4635ec04 system%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 polyorb_hi_generated.ads
-34K9*PolyORB_HI_Generated 38e25 2|10r9 38r19 39r19 40r19 41r19 42r19 43r19
-. 58r5
+34K9*PolyORB_HI_Generated 38e25 2|10r9 30r19 31r19 32r19 33r19 34r19 35r19
+. 50r5
 X 2 polyorb_hi_generated-types.ads
-10K30*Types 1|34k9 2|38r40 39r40 40r40 41r40 42r40 43r40 58l26 58e31
-12I8*mov_data<integer> 17r37 38r46 39r46 40r46 41r46 42r46 43r46
+10K30*Types 1|34k9 2|30r40 31r40 32r40 33r40 34r40 35r40 50l26 50e31
+12I8*mov_data<integer> 17r37 30r46 31r46 32r46 33r46 34r46 35r46
 17i3*mov_data_Default_Value{12I8}
-20I8*photo_data<integer> 25r39
-25i3*photo_data_Default_Value{20I8}
-28B8*toggle_data<boolean> 33r40
-33b3*toggle_data_Default_Value{28E8}
-36R8*Satellite_Controls_impl 44e15 48r7 50r52
-38i7*xLocation{12I8} 51m5
-39i7*yLocation{12I8} 52m5
-40i7*zLocation{12I8} 53m5
-41i7*xRotation{12I8} 54m5
-42i7*yRotation{12I8} 55m5
-43i7*zRotation{12I8} 56m5
-50r3*Satellite_Controls_impl_Default_Value{36R8}
+20B8*toggle_data<boolean> 25r40
+25b3*toggle_data_Default_Value{20E8}
+28R8*Satellite_Controls_impl 36e15 40r7 42r52
+30i7*xLocation{12I8} 43m5
+31i7*yLocation{12I8} 44m5
+32i7*zLocation{12I8} 45m5
+33i7*xRotation{12I8} 46m5
+34i7*yRotation{12I8} 47m5
+35i7*zRotation{12I8} 48m5
+42r3*Satellite_Controls_impl_Default_Value{28R8}
 

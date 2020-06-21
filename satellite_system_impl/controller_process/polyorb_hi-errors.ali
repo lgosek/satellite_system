@@ -1,5 +1,6 @@
-V "GNAT Lib v7"
+V "GNAT Lib v9"
 A -O1
+A -gnatA
 A -g
 A -gnatwa
 A -gnatwG
@@ -7,7 +8,8 @@ A -gnat12
 A -g
 A -gnata
 A -gnato
-A -gnatA
+A -mtune=generic
+A -march=x86-64
 P ZX
 
 RN
@@ -25,7 +27,7 @@ W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
 
 D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
 D polyorb_hi-errors.ads	20170204221544 6deb16d4 polyorb_hi.errors%s
-D system.ads		20170510173650 4635ec04 system%s
+D system.ads		20200312110721 4635ec04 system%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 polyorb_hi.ads

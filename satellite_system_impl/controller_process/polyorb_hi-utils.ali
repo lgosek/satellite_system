@@ -1,5 +1,6 @@
-V "GNAT Lib v7"
+V "GNAT Lib v9"
 A -O1
+A -gnatA
 A -g
 A -gnatwa
 A -gnatwG
@@ -7,7 +8,8 @@ A -gnat12
 A -g
 A -gnata
 A -gnato
-A -gnatA
+A -mtune=generic
+A -march=x86-64
 P SS ZX
 
 RN
@@ -28,9 +30,9 @@ RV SPARK_05
 
 U polyorb_hi.utils%b	polyorb_hi-utils.adb	72aaafa3 NE OO PK
 W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
-W system.assertions%s	s-assert.adb		s-assert.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
 
-U polyorb_hi.utils%s	polyorb_hi-utils.ads	4c1a4b3c NE OO PR PK
+U polyorb_hi.utils%s	polyorb_hi-utils.ads	73c92ac4 NE OO PR PK
 W ada%s			ada.ads			ada.ali
 W ada.unchecked_conversion%s
 W interfaces%s		interfac.ads		interfac.ali
@@ -38,24 +40,25 @@ W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
 W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
 W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyorb_hi_generated-deployment.ali
 W system%s		system.ads		system.ali
-W system.assertions%s	s-assert.adb		s-assert.ali
-W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 
-D ada.ads		20170106103348 76789da1 ada%s
-D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
-D interfac.ads		20160502101001 5ab55268 interfaces%s
+D ada.ads		20200312110721 76789da1 ada%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
 D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
 D polyorb_hi-utils.ads	20170204221544 4a2646a8 polyorb_hi.utils%s
 D polyorb_hi-utils.adb	20170204221544 388ce90b polyorb_hi.utils%b
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200618150231 dc8ef2c9 polyorb_hi_generated.deployment%s
-D system.ads		20170510173650 4635ec04 system%s
-D s-assert.ads		20140225151544 cd8d2c94 system.assertions%s
-D s-exctab.ads		20140225151139 54135002 system.exception_table%s
-D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
-D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
-D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
-D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D polyorb_hi_generated-deployment.ads  20200621213755 dc8ef2c9 polyorb_hi_generated.deployment%s
+D system.ads		20200312110721 4635ec04 system%s
+D s-assert.ads		20200312110721 cd8d2c94 system.assertions%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 ada.ads
