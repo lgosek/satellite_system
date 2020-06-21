@@ -14,7 +14,7 @@ public
 	
 	DATA photo_data
 		properties
-			Data_Model::Data_Representation => integer;
+			Data_Model::Data_Representation => string;
 	end photo_data;
 	
 	Data Satellite_Controls

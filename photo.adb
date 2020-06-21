@@ -45,8 +45,18 @@ package body Photo is
    is
       pragma Unreferenced (photo_in);
    begin
-      photo_out := 23;
-      Put_Line ("Sending photo, target is at distance");
+      photo_out := photo_in;
+      Put_Line ("Sending photo...  0%");
+      for J in Integer range 1 .. 9 loop
+        Put ("Sending photo... "); Put(J); Put("0%"); NewLine;
+        for I in Integer range 1 .. 100000 loop --simulate delay
+            null;
+        end loop;
+      Put_Line ("Sending photo...100%"); 
+      Put_Line ("Photo sent"); 
+      end loop;
+      
+      
    end send_photo;
 
    ----------------
@@ -56,6 +66,6 @@ package body Photo is
    procedure get_photo
    is
    begin
-      Put_Line ("Photo Request ");
+      Put_Line ("Camera triggered");
    end Get_Photo;
 end Photo;
