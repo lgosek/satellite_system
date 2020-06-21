@@ -30,10 +30,17 @@
 ------------------------------------------------------------------------------
 
 with PolyORB_HI.Output;
+with Ada.Numerics.Discrete_Random;
+
 
 package body Move is
 
    use PolyORB_HI.Output;
+
+	current_altitude: Integer := 9000;
+	target_altitude: Integer := 9000;
+	
+	
 
    --------------
    -- Read_Altitude --
@@ -43,9 +50,21 @@ package body Move is
      (alt_in : mov_data;
       alt_out : out mov_data)
    is
+   		subtype rand_range is Integer range -50..50;
+		package random_alt_change is new Ada.Numerics.Discrete_Random(rand_range);
+		use random_alt_change;
+		G: Generator;
+		random_change: Integer;
    begin
-      Put_Line ("Reading altitude");
-      alt_out := 323;
+		Reset(G);
+		random_change := Random(G);
+		
+		if random_change in -5..5 then
+			current_altitude := current_altitude + random_change;
+		end if;
+		
+		Put_Line("Reading altitude " & Integer'Image(current_altitude));
+      alt_out := mov_data(current_altitude);
    end read_altitude;
 
    -----------------
