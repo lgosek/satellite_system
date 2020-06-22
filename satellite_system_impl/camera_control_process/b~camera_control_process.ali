@@ -19,20 +19,20 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_OBSOLESCENT_FEATURES
 RV SPARK_05
 
-U ada_main%b		b~camera_control_process.adb  baf1ca02 NE OO PK IL
+U ada_main%b		b~camera_control_process.adb  69f71c0b NE OO PK IL
 W ada%s			ada.ads			ada.ali
 W ada.exceptions%s	a-except.adb		a-except.ali
 W system%s		system.ads		system.ali
 W system.restrictions%s	s-restri.adb		s-restri.ali
 
-U ada_main%s		b~camera_control_process.ads  2bbb63e3 EE NE OO PK IL
+U ada_main%s		b~camera_control_process.ads  f8bdb5ea EE NE OO PK IL
 W system%s		system.ads		system.ali
 
 D ada.ads		20170106103348 76789da1 ada%s
 D a-except.ads		20151016123252 291912d5 ada.exceptions%s
 D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
-D b~camera_control_process.ads  20200622102112 6d8e8fe7 ada_main%s
-D b~camera_control_process.adb  20200622102112 e5fb5142 ada_main%b
+D b~camera_control_process.ads  20200622102609 be8859ee ada_main%s
+D b~camera_control_process.adb  20200622102609 e5fb5142 ada_main%b
 D system.ads		20170510173650 4635ec04 system%s
 D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
 D s-restri.ads		20140225151139 1b9d0672 system.restrictions%s

@@ -22,7 +22,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_OBSOLESCENT_FEATURES
 RV SPARK_05
 
-U photo%b		photo.adb		ffcd8c55 NE OO PK
+U photo%b		photo.adb		f825e872 NE OO PK
 W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
 W polyorb_hi.output%s	polyorb_hi-output.adb	polyorb_hi-output.ali
 W system.img_int%s	s-imgint.adb		s-imgint.ali
@@ -33,24 +33,24 @@ W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyor
 W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
 
 D photo.ads		20200622095710 149f61fc photo%s
-D photo.adb		20200622102100 2d405e2c photo%b
+D photo.adb		20200622102537 2aa83a0b photo%b
 D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
 D polyorb_hi-output.ads	20170204221544 c612b385 polyorb_hi.output%s
 D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200622102107 8645c9fc polyorb_hi_generated.deployment%s
-D polyorb_hi_generated-types.ads  20200622102107 7b2d849a polyorb_hi_generated.types%s
+D polyorb_hi_generated-deployment.ads  20200622102548 8645c9fc polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-types.ads  20200622102548 7b2d849a polyorb_hi_generated.types%s
 D system.ads		20170510173650 4635ec04 system%s
 D s-imgint.ads		20090409150019 02dbe0c2 system.img_int%s
 D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 photo.ads
-35K9*Photo 45l5 45e10 2|34b14 71l5 71t10
-40U14*send_photo 41>7 42<7 2|42b14 60l8 60t18
+35K9*Photo 45l5 45e10 2|34b14 72l5 72t10
+40U14*send_photo 41>7 42<7 2|42b14 61l8 61t18
 41i7 photo_in{8|12I8} 2|43b7 46r28 48r20
 42i7 photo_out{8|12I8} 2|44b7 48m7
-44U14*Get_Photo 2|66b14 70l8 70t17
+44U14*Get_Photo 2|67b14 71l8 71t17
 X 2 photo.adb
 50i11 J{integer} 51r55
 52i13 I{integer}
@@ -58,7 +58,7 @@ X 3 polyorb_hi.ads
 35K9*PolyORB_HI 2|32r6 36r8 3|39e15
 X 4 polyorb_hi-output.ads
 38K20*Output 2|32w17 36r19 4|82e22
-63U14*Put_Line 2|49s7 51s9 55s7 56s7 69s7
+63U14*Put_Line 2|49s7 51s9 56s7 57s7 70s7
 X 6 polyorb_hi_generated.ads
 34K9*PolyORB_HI_Generated 1|32r6 33r6 37r8 38r8 6|38e25
 X 7 polyorb_hi_generated-deployment.ads

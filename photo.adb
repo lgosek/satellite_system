@@ -52,9 +52,10 @@ package body Photo is
         for I in Integer range 1 .. 100000 loop --simulate delay
             null;
         end loop;
+      end loop;
       Put_Line ("Sending photo...100%"); 
       Put_Line ("Photo sent"); 
-      end loop;
+
       
       
    end send_photo;

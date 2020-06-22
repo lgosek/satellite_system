@@ -391,7 +391,7 @@ package ada_main is
    pragma Export (C, u00177, "polyorb_hi_generated__subprogramsB");
    u00178 : constant Version_32 := 16#81bd3d3e#;
    pragma Export (C, u00178, "polyorb_hi_generated__subprogramsS");
-   u00179 : constant Version_32 := 16#ffcd8c55#;
+   u00179 : constant Version_32 := 16#f825e872#;
    pragma Export (C, u00179, "photoB");
    u00180 : constant Version_32 := 16#e9f72c9a#;
    pragma Export (C, u00180, "photoS");
