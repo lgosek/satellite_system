@@ -1,6 +1,5 @@
-V "GNAT Lib v9"
+V "GNAT Lib v7"
 A -O1
-A -gnatA
 A -g
 A -gnatwa
 A -gnatwG
@@ -8,8 +7,7 @@ A -gnat12
 A -g
 A -gnata
 A -gnato
-A -mtune=generic
-A -march=x86-64
+A -gnatA
 P ZX
 
 RN
@@ -30,14 +28,14 @@ U polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  bd2f
 W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
 W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
 
-D move.ads		20200621220729 e3cb61a2 move%s
+D move.ads		20200622095710 e3cb61a2 move%s
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200621220903 dc8ef2c9 polyorb_hi_generated.deployment%s
-D polyorb_hi_generated-subprograms.ads  20200621220903 e93de98f polyorb_hi_generated.subprograms%s
-D polyorb_hi_generated-subprograms.adb  20200621220903 60766a9d polyorb_hi_generated.subprograms%b
-D polyorb_hi_generated-types.ads  20200621220903 66b0befb polyorb_hi_generated.types%s
-D system.ads		20200312110721 4635ec04 system%s
-D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D polyorb_hi_generated-deployment.ads  20200622100659 dc8ef2c9 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-subprograms.ads  20200622100659 e93de98f polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-subprograms.adb  20200622100659 60766a9d polyorb_hi_generated.subprograms%b
+D polyorb_hi_generated-types.ads  20200622100659 66b0befb polyorb_hi_generated.types%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 move.ads

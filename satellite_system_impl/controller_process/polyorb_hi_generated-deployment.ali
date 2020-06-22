@@ -1,6 +1,5 @@
-V "GNAT Lib v9"
+V "GNAT Lib v7"
 A -O1
-A -gnatA
 A -g
 A -gnatwa
 A -gnatwG
@@ -8,8 +7,7 @@ A -gnat12
 A -g
 A -gnata
 A -gnato
-A -mtune=generic
-A -march=x86-64
+A -gnatA
 P ZX
 
 RN
@@ -25,12 +23,12 @@ RV SPARK_05
 
 U polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  ee2cdf5e NE OO PR PK
 W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
-Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+W system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
 
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200621213755 dc8ef2c9 polyorb_hi_generated.deployment%s
-D system.ads		20200312110721 4635ec04 system%s
-D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D polyorb_hi_generated-deployment.ads  20200622100659 dc8ef2c9 polyorb_hi_generated.deployment%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 polyorb_hi_generated.ads

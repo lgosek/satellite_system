@@ -1,6 +1,5 @@
-V "GNAT Lib v9"
+V "GNAT Lib v7"
 A -O1
-A -gnatA
 A -g
 A -gnatwa
 A -gnatwG
@@ -8,8 +7,7 @@ A -gnat12
 A -g
 A -gnata
 A -gnato
-A -mtune=generic
-A -march=x86-64
+A -gnatA
 P ZX
 
 RN
@@ -33,17 +31,17 @@ W system%s		system.ads		system.ali
 U polyorb_hi.output_low_level%s  polyorb_hi-output_low_level.ads  51afa983 EE NE OO PK
 W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
 
-D ada.ads		20200312110721 76789da1 ada%s
-D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
-D interfac.ads		20200312110721 5ab55268 interfaces%s
-D i-c.ads		20200312110721 5421119b interfaces.c%s
+D ada.ads		20170106103348 76789da1 ada%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-c.ads		20110801143639 5421119b interfaces.c%s
 D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
 D polyorb_hi-output_low_level.ads  20170204221544 a6d5ae25 polyorb_hi.output_low_level%s
 D polyorb_hi-output_low_level_native.adb  20170204221544 55aa4955 polyorb_hi.output_low_level%b
-D system.ads		20200312110721 4635ec04 system%s
-D s-exctab.ads		20200312110721 54135002 system.exception_table%s
-D s-parame.ads		20200312110721 48ec542b system.parameters%s
-D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D system.ads		20170510173650 4635ec04 system%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 3 interfac.ads

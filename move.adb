@@ -39,6 +39,13 @@ package body Move is
 
 	current_altitude: Integer := 9000;
 	target_altitude: Integer := 9000;
+
+	type Fake_Control_Index is mod 4;
+   
+	Fake_Controls: constant array (Fake_Control_Index'Range) of Satellite_Controls_impl :=
+	((1,1,0,0,0,0),(1,0,-1,0,0,0),(0,0,-1,1,0,0),(-1,1,-1,1,-1,1));
+
+	Fake_Index: Fake_Control_Index := 0;
 	
 	
 
@@ -83,17 +90,48 @@ package body Move is
 	eng6Out: out toggle_data;
 	rotation: out mov_data)
    is
-      pragma Unreferenced (manual_controls);
+      	pragma Unreferenced (manual_controls);
    begin
-      Put_Line ("Controlling altitude");
-	eng1Out := True;
+      	Put_Line ("Controlling altitude");
+	toggle_manual_controls := True;
+	manual_controls := Fake_Controls(Fake_Index);
+	Fake_Index := Fake_Index + 1;
+	eng1Out := False;
 	eng2Out := False;
-	eng3Out := True;
-	eng4Out := True;
+	eng3Out := False;
+	eng4Out := False;
 	eng5Out := False;
-	eng6Out := True;
-	rotation := 23;
-      
+	eng6Out := False;
+	rotation := 0;
+	if toggle_manual_control = True then
+		if manual_controls.xLocation > 0 then
+			eng1Out := True;
+			Put_Line ("Movement on the x axis in the positive direction");
+		end if;
+		if manual_controls.xLocation < 0 then
+			eng2Out := True;
+			Put_Line ("Movement on the x axis in the negative direction");
+		end if;
+		if manual_controls.yLocation > 0 then
+			eng3Out := True;
+			Put_Line ("Movement on the y axis in the positive direction");
+		end if;
+		if manual_controls.yLocation < 0 then
+			eng4Out := True;
+			Put_Line ("Movement on the y axis in the negative direction");
+		end if;
+		if manual_controls.zLocation > 0 then
+			eng5Out := True;
+			Put_Line ("Movement on the z axis in the positive direction");
+		end if;
+		if manual_controls.zLocation < 0 then
+			eng6Out := True;
+			Put_Line ("Movement on the z axis in the negative direction");
+		end if;
+		if manual_controls.xRotation > 0 or manual_controls.yRotation > 0 or manual_controls.zRotation > 0 then
+			Put_Line("Calculating rotation...");
+		end if;
+	end if;
    end altitude_controll;
 
 
