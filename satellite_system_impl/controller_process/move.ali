@@ -1,4 +1,4 @@
-V "GNAT Lib v5"
+V "GNAT Lib v7"
 A -O1
 A -g
 A -gnatwa
@@ -21,11 +21,12 @@ RV NO_STANDARD_STORAGE_POOLS
 RR NO_UNCHECKED_ACCESS
 RR NO_UNCHECKED_DEALLOCATION
 RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_OBSOLESCENT_FEATURES
 RV SPARK_05
 
-U move%b		move.adb		7addab4c NE OO PK
+U move%b		move.adb		24d7dfb1 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.numerics%s	a-numeri.ads		a-numeri.ali
 W ada.numerics.discrete_random%s
@@ -40,48 +41,48 @@ W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
 W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyorb_hi_generated-deployment.ali
 W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
 
-D ada.ads		20070406091342 3ffc8e18 ada%s
+D ada.ads		20170106103348 76789da1 ada%s
 D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
-D a-nudira.ads		20100622172941 2fef2912 ada.numerics.discrete_random%s
-D a-nudira.adb		20100622172941 e57ce22b ada.numerics.discrete_random%b
-D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
-D interfac.ads		20141120112812 6033a23f interfaces%s
-D move.ads		20200622101035 e3cb61a2 move%s
-D move.adb		20200622101647 70eb5079 move%b
+D a-nudira.ads		20160418104118 71e55def ada.numerics.discrete_random%s
+D a-nudira.adb		20160418104118 72908cdb ada.numerics.discrete_random%b
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D move.ads		20200622101903 e3cb61a2 move%s
+D move.adb		20200622101903 70eb5079 move%b
 D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
 D polyorb_hi-output.ads	20170204221544 c612b385 polyorb_hi.output%s
 D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200622101113 dc8ef2c9 polyorb_hi_generated.deployment%s
-D polyorb_hi_generated-types.ads  20200622101113 66b0befb polyorb_hi_generated.types%s
-D system.ads		20141031112219 1d274481 system%s
+D polyorb_hi_generated-deployment.ads  20200622101938 dc8ef2c9 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-types.ads  20200622101938 66b0befb polyorb_hi_generated.types%s
+D system.ads		20170510173650 4635ec04 system%s
 D s-exctab.ads		20140225151139 54135002 system.exception_table%s
 D s-imgint.ads		20090409150019 02dbe0c2 system.img_int%s
 D s-imguns.ads		20140717070019 9ff43cf7 system.img_uns%s
 D s-rannum.ads		20150205111725 99ade2f2 system.random_numbers%s
-D s-rannum.adb		20150205111725 20ba1217 system.random_numbers%b
+D s-rannum.adb		20160418125822 20ba1217 system.random_numbers%b
 D s-ransee.ads		20120130115052 01a57b33 system.random_seed%s
-D s-secsta.ads		20140225151139 86a2856d system.secondary_stack%s
-D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
+D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
 D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
-D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
 D s-valuns.ads		20150220142606 10a8ed3b system.val_uns%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 ada.ads
-16K9*Ada 19e8 8|5r6 33r50
+16K9*Ada 20e8 8|5r6 33r50
 X 2 a-numeri.ads
 16K13*Numerics 32e17 8|5r10 33r54
 X 3 a-nudira.ads
-44k22*Discrete_Random 73e33 8|5w19 33r63
-48R9 Generator<19|63R9> 8|35r20[33]
-50V13 Random{integer} 8|39s34[33]
-53U14 Reset<19|100p14> 8|38s17[33]
+44k22*Discrete_Random 75e33 8|5w19 33r63
+50R9 Generator<19|63R9> 8|35r20[33]
+52V13 Random{integer} 8|39s34[33]
+55U14 Reset<19|100p14> 8|38s17[33]
 X 4 a-nudira.adb
-51V16 Random[19|83]{integer} 20|392b13[8|33]
+53V16 Random[19|83]{integer} 20|392b13[8|33]
 X 6 interfac.ads
-68M9*Unsigned_32
-71M9*Unsigned_64
+74M9*Unsigned_32
+77M9*Unsigned_64
 X 7 move.ads
 8K9*Move 30l5 30e9 8|8b14 111l5 111t9
 14U14*read_altitude 15>7 16<7 8|28b14 47l8 47t21
@@ -107,7 +108,7 @@ X 8 move.adb
 20m9 Fake_Index{15M14} 70r47 71m9 71r23
 32I25 rand_range{integer} 33r79
 33K25 random_alt_change[3|44] 34r21
-35r17 G{3|48R9[33]} 38r23 39r41
+35r17 G{3|50R9[33]} 38r23 39r41
 36i17 random_change{integer} 39m17 41r20 42r64
 66r9 Fake_manual_controls{14|28R8} 70m9 80r20 84r20 88r20 92r20 96r20 100r20
 . 104r20 104r58 104r96
@@ -135,6 +136,6 @@ X 14 polyorb_hi_generated-types.ads
 34i7*yRotation{12I8} 8|104r79
 35i7*zRotation{12I8} 8|104r117
 X 19 s-rannum.ads
-75V13*Random{6|68M9} 20|221i21
-76V13*Random{6|71M9} 20|221i21
+75V13*Random{6|74M9} 20|221i21
+76V13*Random{6|77M9} 20|221i21
 

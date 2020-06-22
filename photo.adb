@@ -48,7 +48,7 @@ package body Photo is
       photo_out := photo_in;
       Put_Line ("Sending photo...  0%");
       for J in Integer range 1 .. 9 loop
-        Put ("Sending photo... "); Put(J); Put("0%"); NewLine;
+        Put_Line ("Sending photo... " & Integer'Image(J) & "0%");
         for I in Integer range 1 .. 100000 loop --simulate delay
             null;
         end loop;
