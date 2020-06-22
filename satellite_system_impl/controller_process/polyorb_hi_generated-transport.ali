@@ -1,4 +1,4 @@
-V "GNAT Lib v7"
+V "GNAT Lib v5"
 A -O1
 A -g
 A -gnatwa
@@ -21,12 +21,11 @@ RV NO_STANDARD_STORAGE_POOLS
 RR NO_UNCHECKED_ACCESS
 RR NO_UNCHECKED_DEALLOCATION
 RV NO_DEFAULT_INITIALIZATION
-RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_OBSOLESCENT_FEATURES
 RV SPARK_05
 
-U polyorb_hi_generated.transport%b  polyorb_hi_generated-transport.adb  24eff225 NE OO PK
+U polyorb_hi_generated.transport%b  polyorb_hi_generated-transport.adb  b411b6d6 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.real_time%s	a-reatim.adb		a-reatim.ali
 W interfaces%s		interfac.ads		interfac.ali
@@ -47,11 +46,11 @@ W polyorb_hi.streams%s	polyorb_hi-streams.ads	polyorb_hi-streams.ali
 W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
 W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyorb_hi_generated-deployment.ali
 
-D ada.ads		20170106103348 76789da1 ada%s
-D a-except.ads		20151016123252 291912d5 ada.exceptions%s
-D a-reatim.ads		20160420090448 a87e2da7 ada.real_time%s
-D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
-D interfac.ads		20160502101001 5ab55268 interfaces%s
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-except.ads		20140730140058 5250cb69 ada.exceptions%s
+D a-reatim.ads		20141120112812 02069903 ada.real_time%s
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20141120112812 6033a23f interfaces%s
 D i-c.ads		20110801143639 5421119b interfaces.c%s
 D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
 D polyorb_hi-errors.ads	20170204221544 6deb16d4 polyorb_hi.errors%s
@@ -63,44 +62,44 @@ D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
 D polyorb_hi-time_marshallers.ads  20170204221544 5d51f498 polyorb_hi.time_marshallers%s
 D polyorb_hi-utils.ads	20170204221544 4a2646a8 polyorb_hi.utils%s
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-activity.ads  20200622100659 14b005cd polyorb_hi_generated.activity%s
-D polyorb_hi_generated-deployment.ads  20200622100659 dc8ef2c9 polyorb_hi_generated.deployment%s
-D polyorb_hi_generated-marshallers.ads  20200622100659 104ff88b polyorb_hi_generated.marshallers%s
-D polyorb_hi_generated-transport.ads  20200622100659 cc5413ce polyorb_hi_generated.transport%s
-D polyorb_hi_generated-transport.adb  20200622100659 8b06bfe6 polyorb_hi_generated.transport%b
-D polyorb_hi_generated-types.ads  20200622100659 66b0befb polyorb_hi_generated.types%s
-D system.ads		20170510173650 4635ec04 system%s
+D polyorb_hi_generated-activity.ads  20200622101113 14b005cd polyorb_hi_generated.activity%s
+D polyorb_hi_generated-deployment.ads  20200622101113 dc8ef2c9 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-marshallers.ads  20200622101113 104ff88b polyorb_hi_generated.marshallers%s
+D polyorb_hi_generated-transport.ads  20200622101113 cc5413ce polyorb_hi_generated.transport%s
+D polyorb_hi_generated-transport.adb  20200622101113 8b06bfe6 polyorb_hi_generated.transport%b
+D polyorb_hi_generated-types.ads  20200622101113 66b0befb polyorb_hi_generated.types%s
+D system.ads		20141031112219 1d274481 system%s
 D s-atacco.ads		20120515093410 4c36d12f system.address_to_access_conversions%s
 D s-assert.ads		20140225151544 cd8d2c94 system.assertions%s
 D s-exctab.ads		20140225151139 54135002 system.exception_table%s
 D s-linux.ads		20150107101203 2fda6ad1 system.linux%s
 D s-multip.ads		20101011073009 38ac9f73 system.multiprocessors%s
-D s-oscons.ads		20191204142541 7b5577db system.os_constants%s
-D s-osinte.ads		20170314092617 ad16bc4a system.os_interface%s
+D s-oscons.ads		20180411201707 4bd50652 system.os_constants%s
+D s-osinte.ads		20150107101203 e9e28195 system.os_interface%s
 D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
-D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
-D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-secsta.ads		20140225151139 86a2856d system.secondary_stack%s
+D s-soflin.ads		20140801100131 aa763b52 system.soft_links%s
 D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
 D s-stausa.ads		20110804134155 017a0a05 system.stack_usage%s
-D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
 D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
 D s-tasinf.ads		20140613095942 2b3f8252 system.task_info%s
 D s-taspri.ads		20141120144719 e3ab4429 system.task_primitives%s
 D s-taprop.ads		20140521131406 1dd2e1b6 system.task_primitives.operations%s
-D s-taskin.ads		20170112134946 05d6152c system.tasking%s
-D s-tassta.ads		20170112134946 5a53a7c6 system.tasking.stages%s
+D s-taskin.ads		20150106085750 339749f0 system.tasking%s
+D s-tassta.ads		20121029110946 70812003 system.tasking.stages%s
 D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
-D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 ada.ads
-16K9*Ada 20e8 21|14r6 130r20 192r20
+16K9*Ada 19e8 21|14r6 130r20 192r20
 X 3 a-reatim.ads
-39K13*Real_Time 187e18 21|14w10 130r24 192r24
-51O9*Time<duration> 21|130r34 192r34
+39K13*Real_Time 141e18 21|14w10 130r24 192r24
+41O9*Time<duration> 21|130r34 192r34
 X 5 interfac.ads
-38K9*Interfaces 184e15 21|9w6 40r13
-66M9*Unsigned_16 21|40r24
+38K9*Interfaces 178e15 21|9w6 40r13
+65M9*Unsigned_16 21|40r24
 X 7 polyorb_hi.ads
 35K9*PolyORB_HI 39e15 20|10r6 11r6 12r6 18r15 23r15 24r11 21|10r6 11r6 15r6
 . 23r18 28r18 36r15 39r11 42r14 44r5 48r13 49r5 53r6 60r9 68r9 76r15 77r11
@@ -194,7 +193,7 @@ X 21 polyorb_hi_generated-transport.adb
 27e5 From{18|60E8} 187b5 207r9 222r9 237r9
 28r5 Msg{10|44R9} 188b5 199m9 203m9 214m9 218m9 229m9 233m9
 39r5 Msg{10|44R9} 45m7 45r7 51m7 51r7 62m9 62r9 70m9 70r9
-40m5 Value{5|66M9} 50m7 54r9
+40m5 Value{5|65M9} 50m7 54r9
 41e5 Port{18|120E8} 52m5 59r9 67r9
 74V12 satellite_sys_alt_reader_Send{8|34E9} 75>5 76>5 104s14 154b12 179l7
 . 179t36
@@ -206,9 +205,9 @@ X 21 polyorb_hi_generated-transport.adb
 81a5 Message{13|53A9} 248b5 253r7
 95a5 Msg{13|53A9} 106r9 112r9
 129r5 Thread_Interface_Ü{17|24R8} 140m9 144r9
-130o5 Time_Stamp_Ü{3|51O9} 136m9 146r9
+130o5 Time_Stamp_Ü{3|41O9} 136m9 146r9
 191r5 Thread_Interface_Ü{17|120R8} 202m9 206r9 217m9 221r9 232m9 236r9
-192o5 Time_Stamp_Ü{3|51O9} 198m9 208r9 213m9 223r9 228m9 238r9
+192o5 Time_Stamp_Ü{3|41O9} 198m9 208r9 213m9 223r9 228m9 238r9
 X 35 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22

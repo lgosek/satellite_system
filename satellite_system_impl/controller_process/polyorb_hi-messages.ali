@@ -1,4 +1,4 @@
-V "GNAT Lib v7"
+V "GNAT Lib v5"
 A -O1
 A -g
 A -gnatwa
@@ -21,12 +21,11 @@ RV NO_STANDARD_STORAGE_POOLS
 RR NO_UNCHECKED_ACCESS
 RV NO_UNCHECKED_CONVERSION
 RR NO_UNCHECKED_DEALLOCATION
-RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_OBSOLESCENT_FEATURES
 RV SPARK_05
 
-U polyorb_hi.messages%b	polyorb_hi-messages.adb	5b3511e5 NE OO PK
+U polyorb_hi.messages%b	polyorb_hi-messages.adb	a9102823 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.unchecked_conversion%s
 W interfaces%s		interfac.ads		interfac.ali
@@ -43,33 +42,33 @@ W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyor
 W system.assertions%s	s-assert.adb		s-assert.ali
 W system.secondary_stack%s  s-secsta.adb	s-secsta.ali
 
-D ada.ads		20170106103348 76789da1 ada%s
-D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
-D interfac.ads		20160502101001 5ab55268 interfaces%s
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20141120112812 6033a23f interfaces%s
 D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
 D polyorb_hi-messages.ads  20170204221544 cdc9ec9c polyorb_hi.messages%s
 D polyorb_hi-messages.adb  20170204221544 b727af2e polyorb_hi.messages%b
 D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
 D polyorb_hi-utils.ads	20170204221544 4a2646a8 polyorb_hi.utils%s
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200622100659 dc8ef2c9 polyorb_hi_generated.deployment%s
-D system.ads		20170510173650 4635ec04 system%s
+D polyorb_hi_generated-deployment.ads  20200622101113 dc8ef2c9 polyorb_hi_generated.deployment%s
+D system.ads		20141031112219 1d274481 system%s
 D s-assert.ads		20140225151544 cd8d2c94 system.assertions%s
 D s-exctab.ads		20140225151139 54135002 system.exception_table%s
-D s-secsta.ads		20170112134946 9751b57e system.secondary_stack%s
-D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-secsta.ads		20140225151139 86a2856d system.secondary_stack%s
+D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
 D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
-D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 ada.ads
-16K9*Ada 20e8 6|34r6 51r39 53r39
+16K9*Ada 19e8 6|34r6 51r39 53r39
 X 2 a-unccon.ads
 20v14*Unchecked_Conversion 6|34w10 51r43 53r43
 X 3 interfac.ads
-38K9*Interfaces 184e15 6|32w6 39r8 173r13 183r31
-63M9*Unsigned_8 6|97r36
-66M9*Unsigned_16 6|173r24 183r42
+38K9*Interfaces 178e15 6|32w6 39r8 173r13 183r31
+62M9*Unsigned_8 6|97r36
+65M9*Unsigned_16 6|173r24 183r42
 X 4 polyorb_hi.ads
 35K9*PolyORB_HI 39e15 5|34r6 37r9 41r8 134r5 6|33r6 36r14 38r8 186r5
 X 5 polyorb_hi-messages.ads
@@ -138,9 +137,9 @@ X 7 polyorb_hi-streams.ads
 . 108r19 125r47 6|75r13 78r11 80r20 95r25 106r23 150r23
 X 8 polyorb_hi-utils.ads
 40K20*Utils 6|33w17 38r19 8|140e21
-62V13*Internal_Code[2|20]{3|63M9} 6|84s46 85s46
+62V13*Internal_Code[2|20]{3|62M9} 6|84s46 85s46
 64V13*Corresponding_Entity[2|20]{10|60E8} 6|97s14
-75V13*Swap_Bytes{3|66M9} 6|172s10 183s19
+75V13*Swap_Bytes{3|65M9} 6|172s10 183s19
 X 9 polyorb_hi_generated.ads
 34K9*PolyORB_HI_Generated 5|35r6 42r8 9|38e25
 X 10 polyorb_hi_generated-deployment.ads

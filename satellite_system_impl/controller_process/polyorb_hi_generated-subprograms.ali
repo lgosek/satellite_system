@@ -1,4 +1,4 @@
-V "GNAT Lib v7"
+V "GNAT Lib v5"
 A -O1
 A -g
 A -gnatwa
@@ -28,20 +28,20 @@ U polyorb_hi_generated.subprograms%s  polyorb_hi_generated-subprograms.ads  bd2f
 W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
 W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
 
-D move.ads		20200622095710 e3cb61a2 move%s
+D move.ads		20200622101035 e3cb61a2 move%s
 D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
-D polyorb_hi_generated-deployment.ads  20200622100659 dc8ef2c9 polyorb_hi_generated.deployment%s
-D polyorb_hi_generated-subprograms.ads  20200622100659 e93de98f polyorb_hi_generated.subprograms%s
-D polyorb_hi_generated-subprograms.adb  20200622100659 60766a9d polyorb_hi_generated.subprograms%b
-D polyorb_hi_generated-types.ads  20200622100659 66b0befb polyorb_hi_generated.types%s
-D system.ads		20170510173650 4635ec04 system%s
-D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D polyorb_hi_generated-deployment.ads  20200622101113 dc8ef2c9 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-subprograms.ads  20200622101113 e93de98f polyorb_hi_generated.subprograms%s
+D polyorb_hi_generated-subprograms.adb  20200622101113 60766a9d polyorb_hi_generated.subprograms%b
+D polyorb_hi_generated-types.ads  20200622101113 66b0befb polyorb_hi_generated.types%s
+D system.ads		20141031112219 1d274481 system%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
 D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
 X 1 move.ads
-35K9*Move 57e9 5|9w6 16r12 29r12
-41U14*read_altitude 5|16r17
-45U14*altitude_controll 5|29r17
+8K9*Move 30e9 5|9w6 16r12 29r12
+14U14*read_altitude 5|16r17
+18U14*altitude_controll 5|29r17
 X 2 polyorb_hi_generated.ads
 34K9*PolyORB_HI_Generated 38e25 4|9r6 11r9 14r14 15r19 18r14 19r29 20r23
 . 21r19 22r19 23r19 24r19 25r19 26r19 27r20 29r5 5|11r14 14r14 15r19 19r14

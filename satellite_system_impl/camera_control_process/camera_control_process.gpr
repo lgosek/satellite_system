@@ -16,7 +16,7 @@ project camera_control_process is
   for Source_Dirs use
    (".",
     "/opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada",
-    "/home/lukasz/Dokumenty/SCzRz/workspace/satellite_system/") & external_as_list("ADA_INCLUDE_PATH", ":");
+    "/home/kluch/Desktop/workspace/satellite_system/") & external_as_list("ADA_INCLUDE_PATH", ":");
 
   for Main use ("camera_control_process.adb");
 

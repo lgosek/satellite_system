@@ -1,0 +1,140 @@
+V "GNAT Lib v5"
+A -O1
+A -g
+A -gnatwa
+A -gnatwG
+A -gnat12
+A -g
+A -gnata
+A -gnato
+A -gnatA
+P SS ZX
+
+RN
+RR NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RR NO_DISPATCH
+RV NO_EXCEPTIONS
+RR NO_IO
+RR NO_RECURSION
+RV NO_STANDARD_STORAGE_POOLS
+RR NO_UNCHECKED_ACCESS
+RR NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_OBSOLESCENT_FEATURES
+RV SPARK_05
+
+U move%b		move.adb		7addab4c NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+W polyorb_hi%s		polyorb_hi.ads		polyorb_hi.ali
+W polyorb_hi.output%s	polyorb_hi-output.adb	polyorb_hi-output.ali
+Z system%s		system.ads		system.ali
+W system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+
+U move%s		move.ads		59f52d90 EE NE OO PK
+W polyorb_hi_generated%s  polyorb_hi_generated.ads  polyorb_hi_generated.ali
+W polyorb_hi_generated.deployment%s  polyorb_hi_generated-deployment.ads  polyorb_hi_generated-deployment.ali
+W polyorb_hi_generated.types%s  polyorb_hi_generated-types.ads  polyorb_hi_generated-types.ali
+
+D ada.ads		20070406091342 3ffc8e18 ada%s
+D a-numeri.ads		20080324174807 bb51c45a ada.numerics%s
+D a-nudira.ads		20100622172941 2fef2912 ada.numerics.discrete_random%s
+D a-nudira.adb		20100622172941 e57ce22b ada.numerics.discrete_random%b
+D a-unccon.ads		20070406091342 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20141120112812 6033a23f interfaces%s
+D move.ads		20200622101035 e3cb61a2 move%s
+D move.adb		20200622101647 70eb5079 move%b
+D polyorb_hi.ads	20170204221544 f77a07a6 polyorb_hi%s
+D polyorb_hi-output.ads	20170204221544 c612b385 polyorb_hi.output%s
+D polyorb_hi-streams.ads  20170204221544 54018470 polyorb_hi.streams%s
+D polyorb_hi_generated.ads  20170204221544 32a22d97 polyorb_hi_generated%s
+D polyorb_hi_generated-deployment.ads  20200622101113 dc8ef2c9 polyorb_hi_generated.deployment%s
+D polyorb_hi_generated-types.ads  20200622101113 66b0befb polyorb_hi_generated.types%s
+D system.ads		20141031112219 1d274481 system%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-imgint.ads		20090409150019 02dbe0c2 system.img_int%s
+D s-imguns.ads		20140717070019 9ff43cf7 system.img_uns%s
+D s-rannum.ads		20150205111725 99ade2f2 system.random_numbers%s
+D s-rannum.adb		20150205111725 20ba1217 system.random_numbers%b
+D s-ransee.ads		20120130115052 01a57b33 system.random_seed%s
+D s-secsta.ads		20140225151139 86a2856d system.secondary_stack%s
+D s-stalib.ads		20150220094550 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-unstyp.ads		20140731130224 9d58a4c0 system.unsigned_types%s
+D s-valuns.ads		20150220142606 10a8ed3b system.val_uns%s
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/native.adc  20170204221544 00000000
+D /opt/ocarina-2017.1-suite-linux-x86_64-20170204/include/ocarina/runtime/polyorb-hi-ada/gnat.adc  20170204221544 00000000
+X 1 ada.ads
+16K9*Ada 19e8 8|5r6 33r50
+X 2 a-numeri.ads
+16K13*Numerics 32e17 8|5r10 33r54
+X 3 a-nudira.ads
+44k22*Discrete_Random 73e33 8|5w19 33r63
+48R9 Generator<19|63R9> 8|35r20[33]
+50V13 Random{integer} 8|39s34[33]
+53U14 Reset<19|100p14> 8|38s17[33]
+X 4 a-nudira.adb
+51V16 Random[19|83]{integer} 20|392b13[8|33]
+X 6 interfac.ads
+68M9*Unsigned_32
+71M9*Unsigned_64
+X 7 move.ads
+8K9*Move 30l5 30e9 8|8b14 111l5 111t9
+14U14*read_altitude 15>7 16<7 8|28b14 47l8 47t21
+15i7 alt_in{14|12I8} 8|29b7
+16i7 alt_out{14|12I8} 8|30b7 46m7
+18U14*altitude_controll 19>8 20>9 21>9 22<9 23<9 24<9 25<9 26<9 27<9 28<9
+. 8|53b14 108l8 108t25
+19i8 alt_in{14|12I8} 8|54b5
+20b9 toggle_manual_control{14|20E8} 8|55b9
+21r9 manual_Controls{14|28R8} 8|56b9 65r30
+22b9 eng1Out{14|20E8} 8|57b9 72m9 81m25
+23b9 eng2Out{14|20E8} 8|58b9 73m9 85m25
+24b9 eng3Out{14|20E8} 8|59b9 74m9 89m25
+25b9 eng4Out{14|20E8} 8|60b9 75m9 93m25
+26b9 eng5Out{14|20E8} 8|61b9 76m9 97m25
+27b9 eng6Out{14|20E8} 8|62b9 77m9 101m25
+28i9 rotation{14|12I8} 8|63b9 78m9
+X 8 move.adb
+12i9 current_altitude{integer} 42m25 42r45 45r62 46r27
+13i9 target_altitude{integer}
+15M14 Fake_Control_Index 17r40 20r21
+17a9 Fake_Controls(14|28R8) 70r33
+20m9 Fake_Index{15M14} 70r47 71m9 71r23
+32I25 rand_range{integer} 33r79
+33K25 random_alt_change[3|44] 34r21
+35r17 G{3|48R9[33]} 38r23 39r41
+36i17 random_change{integer} 39m17 41r20 42r64
+66r9 Fake_manual_controls{14|28R8} 70m9 80r20 84r20 88r20 92r20 96r20 100r20
+. 104r20 104r58 104r96
+67b9 Fake_toggle_manual_control{14|20E8} 79r12
+X 9 polyorb_hi.ads
+35K9*PolyORB_HI 8|4r6 10r8 9|39e15
+X 10 polyorb_hi-output.ads
+38K20*Output 8|4w17 10r19 10|82e22
+63U14*Put_Line 8|45s17 69s9 82s25 86s25 90s25 94s25 98s25 102s25 105s25
+X 12 polyorb_hi_generated.ads
+34K9*PolyORB_HI_Generated 7|5r6 6r6 10r8 11r8 12|38e25
+X 13 polyorb_hi_generated-deployment.ads
+10K30*Deployment 7|5w27 10r29 13|251e36
+X 14 polyorb_hi_generated-types.ads
+10K30*Types 7|6w27 11r29 14|50e31
+12I8*mov_data<integer> 7|15r16 16r21 19r17 28r23 8|29r16 30r21 46r18 54r14
+. 63r23
+20B8*toggle_data<boolean> 7|20r32 22r22 23r22 24r22 25r22 26r22 27r22 8|55r32
+. 57r22 58r22 59r22 60r22 61r22 62r22 67r37
+28R8*Satellite_Controls_impl 7|21r26 8|17r69 56r26 66r31 14|36e15
+30i7*xLocation{12I8} 8|80r41 84r41
+31i7*yLocation{12I8} 8|88r41 92r41
+32i7*zLocation{12I8} 8|96r41 100r41
+33i7*xRotation{12I8} 8|104r41
+34i7*yRotation{12I8} 8|104r79
+35i7*zRotation{12I8} 8|104r117
+X 19 s-rannum.ads
+75V13*Random{6|68M9} 20|221i21
+76V13*Random{6|71M9} 20|221i21
+
