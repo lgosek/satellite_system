@@ -709,6 +709,13 @@
       <size width="1171.0" height="476.0"/>
     </element>
     <element uuid="d7985d56-d5cc-4d04-a485-9a0c1b157a54" manual="true">
+      <element uuid="66b490c1-2389-4bf9-ab48-50ecc8eaedda" manual="true" dockArea="right">
+        <bo>
+          <seg>feature</seg>
+          <seg>manual_controls</seg>
+        </bo>
+        <position x="401.0" y="55.0"/>
+      </element>
       <element uuid="193e0e59-4d87-44e9-ac38-ee399dbffe2a" manual="true" dockArea="right">
         <bo>
           <seg>feature</seg>
@@ -964,6 +971,18 @@
             <seg>c1</seg>
           </bo>
         </element>
+        <element uuid="df3981a8-c0b6-4e9b-a7f9-4e84d5dd8def" manual="true">
+          <element uuid="1a0755a7-ba9a-4163-928f-0b39d440e207" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>c2</seg>
+          </bo>
+        </element>
         <element uuid="e02ecf19-7c70-4999-b2fb-b80430213fac" manual="true">
           <element uuid="b5f22762-97ed-418d-9bfa-89b97365e345" manual="true">
             <bo>
@@ -1097,6 +1116,13 @@
           </bo>
           <position x="708.0" y="750.0"/>
         </element>
+        <element uuid="e4998891-a995-4c86-a5f0-7f58f3e1183d" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>manual_controls</seg>
+          </bo>
+          <position y="308.0"/>
+        </element>
         <element uuid="1a71b4ef-178c-4d18-a488-2f0a410fbebe" manual="true" dockArea="right">
           <bo>
             <seg>feature</seg>
@@ -1161,6 +1187,13 @@
                 <seg>eng6out</seg>
               </bo>
               <position x="423.0" y="582.0"/>
+            </element>
+            <element uuid="d67ff728-cfd8-4146-9f80-c3e19ae5d5a6" manual="true" dockArea="left">
+              <bo>
+                <seg>feature</seg>
+                <seg>manual_controls</seg>
+              </bo>
+              <position y="231.0"/>
             </element>
             <element uuid="4c93fb4e-b144-41c1-a0e6-17afd401afe7" manual="true" dockArea="right">
               <bo>

@@ -1,4 +1,12 @@
 package satellite_sys
+
+--AUTHORS
+--Łukasz Gosek 				lgosek@student.agh.edu.pl
+--Łukasz Kluska				lukaszklusk@gmail.com
+--Damian Kozyra				damiankozyra0@gmail.com
+--Igor Noga					noga.igor@gmail.com
+--Krzysztof Pakaszewski		krzysztof.pakaszewski@gmail.com
+
 public
 	with deployment;
 	with data_types;
